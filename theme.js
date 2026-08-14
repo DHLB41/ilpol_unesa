@@ -128,12 +128,18 @@
       });
     }, 80);
 
-    /* 8 ─ Animasi fade-in saat elemen masuk viewport */
+    /* 8 ─ Animasi fade-in saat elemen masuk viewport (scroll-reveal + stagger) */
     if ('IntersectionObserver' in window) {
       var style = document.createElement('style');
       style.textContent =
-        '.ip-reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}' +
-        '.ip-reveal.ip-in{opacity:1;transform:translateY(0);}';
+        '.ip-reveal{opacity:0;transform:translateY(20px);' +
+          'transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);' +
+          'transition-delay:var(--ip-delay,0ms);}' +
+        '.ip-reveal.ip-in{opacity:1;transform:translateY(0);}' +
+        '.ip-focus-card,.ip-why-card,.blog-carousel,#sidebar .widget,' +
+          '.shop_carousel .shop_item,.ip-timeline-item{will-change:transform;}' +
+        '.ip-focus-card,.blog-carousel,.shop_carousel .shop_item{transition:box-shadow .25s ease,transform .25s ease !important;}' +
+        '.ip-quote-band blockquote{transition:opacity .8s ease .1s,transform .8s ease .1s;}';
       document.head.appendChild(style);
 
       var io = new IntersectionObserver(function (entries) {
@@ -142,10 +148,22 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-      /* Tambah kelas reveal ke card, section heading, dll */
+      /* Tambah kelas reveal ke card, section heading, grid item, dll */
       var targets =
         '.card, article, [class*="post-item"], [class*="news-item"], ' +
-        'section h2, section h3, .container>h2, .row>div>.card';
+        'section h2, section h3, .container>h2, .row>div>.card, ' +
+        '.ip-focus-card, .ip-why-card, .ip-timeline-item, .ip-quote-band blockquote, ' +
+        '.blog-carousel, #sidebar .widget, .shop_carousel .shop_item';
+      /* Grid/list yang elemennya perlu stagger delay bertahap */
+      var staggerGroups = document.querySelectorAll(
+        '.ip-focus-grid, .ip-why-grid, .blog-masonry, .shop_carousel, .ip-timeline'
+      );
+      staggerGroups.forEach(function (group) {
+        Array.prototype.forEach.call(group.children, function (child, i) {
+          child.style.setProperty('--ip-delay', Math.min(i, 5) * 90 + 'ms');
+        });
+      });
+
       document.querySelectorAll(targets).forEach(function (el) {
         el.classList.add('ip-reveal');
         io.observe(el);
