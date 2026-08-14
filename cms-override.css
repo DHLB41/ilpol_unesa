@@ -1,0 +1,374 @@
+/* ============================================================
+   ILPOL UNESA — CMS Override v2.1 (px-based, no rem)
+   https://ilpol-unesa.netlify.app/cms-override.css
+   ============================================================ */
+
+:root {
+  --ip-900:#0B2A4A; --ip-800:#0F3760; --ip-700:#154A82; --ip-100:#E7EEF5;
+  --ip-gold:#C8932A; --ip-gold-l:#F0C868;
+  --ip-paper:#F4F6F9; --ip-ink:#16212C; --ip-muted:#5C6773; --ip-line:#DDE3EA;
+  --ip-sh:0 8px 20px -10px rgba(11,42,74,.22);
+}
+
+/* ── GLOBAL: font semua px agar tidak terpengaruh html root-size ── */
+body.ilpol-theme {
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif !important;
+  font-size:12px !important;
+  background:#F4F6F9 !important;
+  color:#16212C !important;
+  line-height:1.7 !important;
+}
+body.ilpol-theme h1,body.ilpol-theme h2,
+body.ilpol-theme h3,body.ilpol-theme h4 {
+  font-family:'Fraunces',Georgia,serif !important;
+  color:#0B2A4A !important; line-height:1.25 !important;
+}
+body.ilpol-theme h1{font-size:27px !important;}
+body.ilpol-theme h2{font-size:22px !important;}
+body.ilpol-theme h3{font-size:18px !important;}
+body.ilpol-theme h4{font-size:12px !important;}
+body.ilpol-theme p,body.ilpol-theme li {
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif !important;
+  font-size:12px !important;
+  line-height:1.75 !important;
+  color:#16212C !important;
+}
+body.ilpol-theme a {
+  color:#154A82 !important;
+  text-decoration:none !important;
+  transition:color .15s !important;
+}
+body.ilpol-theme a:hover{color:#C8932A !important;}
+
+/* ── TOPBAR: seluruh baris jadi putih bersih ── */
+body.ilpol-theme #topbar {
+  background-color:#ffffff !important;
+  border-bottom:1px solid #DDE3EA !important;
+  padding:6px 0 !important;
+}
+/* Topbar text — JANGAN pakai * karena akan merusak FontAwesome icons */
+body.ilpol-theme #topbar a,
+body.ilpol-theme #topbar span,
+body.ilpol-theme #topbar p,
+body.ilpol-theme #topbar div {
+  color:#1a1a1a !important;
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif !important;
+  font-size:12px !important;
+}
+body.ilpol-theme #topbar a:hover {color:#0B2A4A !important; text-decoration:underline !important;}
+/* Kembalikan font FontAwesome pada elemen icon */
+body.ilpol-theme #topbar i,
+body.ilpol-theme #topbar i.fa,
+body.ilpol-theme i[class*="fa-"] {
+  font-family:'FontAwesome','Font Awesome 5 Free','Font Awesome 6 Free' !important;
+  color:#555 !important;
+  font-size:12px !important;
+}
+
+/* ── HEADER navbar ── */
+body.ilpol-theme #header-style-1,
+body.ilpol-theme #header-style-1.affix-top,
+body.ilpol-theme #header-style-1.affix {
+  background-color:#0B2A4A !important;
+}
+body.ilpol-theme #header-style-1 .navbar.yamm,
+body.ilpol-theme #header-style-1 .navbar-default {
+  background-color:#0B2A4A !important; border:none !important;
+}
+
+/* ── LOGO ── */
+body.ilpol-theme a.navbar-brand,
+body.ilpol-theme .navbar-brand {
+  background-color:transparent !important;
+  width:260px !important;
+  box-sizing:content-box !important;
+  padding-right:0 !important;
+}
+body.ilpol-theme a.navbar-brand:hover,
+body.ilpol-theme .navbar-brand:hover {
+  background-color:transparent !important; opacity:1 !important;
+}
+
+/* ── NAV LINKS ── */
+body.ilpol-theme #header-style-1 .navbar-nav > li > a {
+  color:#F0C868 !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-weight:600 !important;
+  font-size:12px !important;
+  transition:background .15s, color .15s !important;
+}
+body.ilpol-theme #header-style-1 .navbar-nav > li > a:hover {
+  background-color:rgba(255,255,255,.12) !important; color:#ffffff !important;
+}
+
+/* ── DROPDOWN ── */
+body.ilpol-theme #header-style-1 .dropdown-menu {
+  background:#fff !important;
+  border:1px solid #DDE3EA !important;
+  border-radius:12px !important;
+  box-shadow:0 16px 40px -12px rgba(11,42,74,.28) !important;
+  padding:10px !important;
+}
+body.ilpol-theme #header-style-1 .dropdown-menu li a {
+  color:#16212C !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-weight:500 !important;
+  font-size:12px !important;
+  border-radius:8px !important;
+  padding:9px 12px !important;
+  display:block !important;
+}
+body.ilpol-theme #header-style-1 .dropdown-menu li a:hover {
+  background-color:#E7EEF5 !important; color:#0B2A4A !important;
+}
+body.ilpol-theme #header-style-1 .dropdown-menu h3 {
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:11px !important; font-weight:800 !important;
+  letter-spacing:.08em !important; text-transform:uppercase !important;
+  color:#C8932A !important; margin:10px 12px 4px !important; padding:0 !important;
+}
+body.ilpol-theme #header-style-1 .dropdown-menu h3 a {
+  color:#C8932A !important; font-size:11px !important; padding:0 !important;
+}
+body.ilpol-theme #header-style-1 .navbar-toggle .icon-bar {
+  background-color:#F0C868 !important;
+}
+body.ilpol-theme .arrow-up {border-bottom-color:#F0C868 !important;}
+
+/* ── PAGE TITLE (section judul halaman) ── */
+body.ilpol-theme .post-wrapper-top {
+  background:linear-gradient(135deg,#0B2A4A,#154A82) !important;
+  padding:36px 0 !important;
+}
+body.ilpol-theme .post-wrapper-top h1,
+body.ilpol-theme .post-wrapper-top h2 {
+  color:#ffffff !important;
+  font-family:'Fraunces',Georgia,serif !important;
+  font-size:24px !important;
+}
+
+/* ── KONTEN HALAMAN ── */
+body.ilpol-theme .blog-wrapper { background:#ffffff !important; padding:24px 0 !important; }
+body.ilpol-theme #main-content p,
+body.ilpol-theme .blog-wrapper p {
+  font-size:12px !important; line-height:1.75 !important; color:#16212C !important;
+}
+body.ilpol-theme #main-content h2,
+body.ilpol-theme #main-content h3 {
+  font-family:'Fraunces',Georgia,serif !important; color:#0B2A4A !important;
+}
+
+/* ── CARD ── */
+body.ilpol-theme .card {
+  border:1px solid #DDE3EA !important; border-radius:16px !important;
+  background:#fff !important; overflow:hidden !important;
+  transition:box-shadow .2s, transform .2s !important;
+}
+body.ilpol-theme .card:hover {
+  box-shadow:0 8px 20px -10px rgba(11,42,74,.22) !important;
+  transform:translateY(-3px) !important;
+}
+body.ilpol-theme .card h3,body.ilpol-theme .card-title {
+  font-family:'Fraunces',Georgia,serif !important;
+  color:#0B2A4A !important; font-size:18px !important;
+}
+body.ilpol-theme .card p,.card-text {color:#5C6773 !important; font-size:12px !important;}
+
+/* ── TOMBOL ── */
+body.ilpol-theme .btn {
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-weight:700 !important; font-size:12px !important;
+  border-radius:10px !important; transition:transform .15s !important;
+}
+body.ilpol-theme .btn-primary,.btn-primary {
+  background:#C8932A !important; border-color:#C8932A !important;
+  color:#0B2A4A !important;
+}
+body.ilpol-theme .btn-primary:hover {
+  background:#F0C868 !important; transform:translateY(-2px) !important;
+}
+
+/* ── TABEL ── */
+body.ilpol-theme table {
+  border-radius:16px !important; overflow:hidden !important;
+  box-shadow:0 8px 20px -10px rgba(11,42,74,.22) !important; width:100% !important;
+}
+body.ilpol-theme table thead,body.ilpol-theme table th {
+  background:#0B2A4A !important; color:#ffffff !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-weight:700 !important; font-size:12px !important;
+  text-transform:uppercase !important; letter-spacing:.05em !important;
+  padding:14px 16px !important;
+}
+body.ilpol-theme table td {
+  padding:13px 16px !important; border-bottom:1px solid #DDE3EA !important;
+  font-size:12px !important;
+}
+body.ilpol-theme table tr:last-child td{border-bottom:none !important;}
+body.ilpol-theme table tr:hover td{background:#F4F6F9 !important;}
+
+/* ── FORM ── */
+body.ilpol-theme input,body.ilpol-theme select,body.ilpol-theme textarea {
+  border:1.5px solid #DDE3EA !important; border-radius:10px !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:12px !important; padding:11px 14px !important;
+}
+body.ilpol-theme input:focus,body.ilpol-theme select:focus,
+body.ilpol-theme textarea:focus {
+  border-color:#154A82 !important; outline:none !important;
+  box-shadow:0 0 0 3px rgba(21,74,130,.15) !important;
+}
+
+/* ── FOOTER ── */
+body.ilpol-theme #footer-style-1,
+body.ilpol-theme footer { background:#091E36 !important; }
+/* Footer text — exclude <i> agar icon tidak rusak */
+body.ilpol-theme #footer-style-1 a,
+body.ilpol-theme #footer-style-1 p,
+body.ilpol-theme #footer-style-1 span,
+body.ilpol-theme #footer-style-1 div,
+body.ilpol-theme #footer-style-1 h1,
+body.ilpol-theme #footer-style-1 h2,
+body.ilpol-theme #footer-style-1 h3,
+body.ilpol-theme #footer-style-1 h4,
+body.ilpol-theme #footer-style-1 h5,
+body.ilpol-theme #footer-style-1 li {
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+}
+body.ilpol-theme #footer-style-1 i,
+body.ilpol-theme #footer-style-1 i.fa {
+  font-family:'FontAwesome','Font Awesome 5 Free','Font Awesome 6 Free' !important;
+  color:#cdd9e6 !important;
+}
+body.ilpol-theme #footer-style-1 p,
+body.ilpol-theme footer p { color:#cdd9e6 !important; font-size:12px !important; }
+body.ilpol-theme #footer-style-1 a,
+body.ilpol-theme footer a { color:#b9c7d6 !important; font-size:12px !important; }
+body.ilpol-theme #footer-style-1 a:hover,
+body.ilpol-theme footer a:hover { color:#fff !important; }
+body.ilpol-theme #copyrights { background:#061528 !important; }
+body.ilpol-theme #copyrights,body.ilpol-theme #copyrights a {
+  color:#9fb1c4 !important; font-size:12px !important;
+}
+body.ilpol-theme .dmtop {
+  background:#C8932A !important; color:#0B2A4A !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-weight:700 !important;
+}
+
+/* ── FOOTER DETAIL (berdasarkan struktur HTML CMS asli) ── */
+body.ilpol-theme #footer-style-1 {
+  background:#091E36 !important;
+  padding:48px 0 32px !important;
+  color:#cdd9e6 !important;
+}
+body.ilpol-theme #footer-style-1 img {
+  filter:brightness(1.1) !important;
+  margin-bottom:12px !important;
+}
+body.ilpol-theme #footer-style-1 strong {
+  color:#ffffff !important;
+  font-weight:700 !important;
+  font-size:12px !important;
+  letter-spacing:.03em !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+}
+body.ilpol-theme #footer-style-1 p {
+  color:#cdd9e6 !important;
+  font-size:12px !important;
+  line-height:1.7 !important;
+  margin-bottom:6px !important;
+}
+body.ilpol-theme #footer-style-1 a {
+  color:#b9c7d6 !important;
+  font-size:12px !important;
+}
+body.ilpol-theme #footer-style-1 a:hover {
+  color:#ffffff !important;
+  text-decoration:none !important;
+}
+body.ilpol-theme #footer-style-1 center {
+  color:#ffffff !important;
+  font-size:11px !important;
+  font-weight:800 !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+  margin-bottom:12px !important;
+}
+/* Google Maps iframe di footer */
+body.ilpol-theme #footer-style-1 iframe {
+  border-radius:12px !important;
+  overflow:hidden !important;
+  filter:brightness(.9) contrast(1.05) !important;
+  width:100% !important;
+  max-width:320px !important;
+  height:180px !important;
+}
+/* Copyright bar */
+body.ilpol-theme #copyrights {
+  background:#061528 !important;
+  padding:16px 0 !important;
+}
+body.ilpol-theme #copyrights #global-footer {
+  color:#9fb1c4 !important;
+  font-size:12px !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+}
+body.ilpol-theme #copyrights a {
+  color:#9fb1c4 !important;
+}
+body.ilpol-theme #copyrights a:hover {
+  color:#ffffff !important;
+}
+body.ilpol-theme #copyrights img {
+  vertical-align:middle !important;
+  margin-right:8px !important;
+}
+/* Scroll to top button */
+body.ilpol-theme .dmtop {
+  background:#C8932A !important;
+  color:#0B2A4A !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-weight:700 !important;
+  font-size:12px !important;
+}
+
+/* ── FOOTER MOCKUP (injected via JS) ───────────────────── */
+.ilpol-footer { background:#091E36; color:#cdd9e6; font-family:'Plus Jakarta Sans',sans-serif; }
+.ilpol-footer-top { padding:56px 0 40px; max-width:1200px; margin:0 auto; padding-left:24px; padding-right:24px;
+  display:grid; grid-template-columns:1.2fr 0.8fr 0.8fr 1.2fr; gap:36px; }
+.ilpol-footer-logo {
+  display:flex !important;
+  justify-content:flex-start !important;
+  margin-bottom:14px !important;
+}
+.ilpol-footer-logo img {
+  max-height:64px !important;
+  width:auto !important;
+  max-width:200px !important;
+  display:block !important;
+}
+.ilpol-footer-about h4 { color:#F0C868 !important; font-size:14px !important; font-weight:700 !important; margin:0 0 4px !important; font-family:'Plus Jakarta Sans',sans-serif !important; }
+.ilpol-footer-about .small { font-size:13px; margin:0 0 16px; color:#9fb1c4; line-height:1.5; }
+.ilpol-footer-contact { display:flex; flex-direction:column; gap:10px; }
+.ilpol-footer-contact a { display:flex; gap:10px; align-items:flex-start; color:#cdd9e6; font-size:13px; text-decoration:none; }
+.ilpol-footer-contact a:hover { color:#fff; }
+.ilpol-footer-contact svg { color:#F0C868; margin-top:2px; flex-shrink:0; width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.ilpol-footer-col h5 { color:#fff; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; margin:0 0 14px; font-family:'Plus Jakarta Sans',sans-serif; }
+.ilpol-footer-col ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+.ilpol-footer-col a { color:#b9c7d6; font-size:13px; text-decoration:none; }
+.ilpol-footer-col a:hover { color:#fff; }
+.ilpol-footer-map h5 { color:#fff; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; margin:0 0 12px; font-family:'Plus Jakarta Sans',sans-serif; }
+.ilpol-footer-map iframe { width:100%; height:160px; border:0; border-radius:10px; filter:grayscale(.1) brightness(.9); }
+.ilpol-footer-map p { font-size:12px; color:#9fb1c4; margin:8px 0 0; }
+.ilpol-footer-bottom { border-top:1px solid rgba(255,255,255,.1); padding:18px 24px;
+  max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:12px; }
+.ilpol-footer-bottom p { font-size:12px; color:#9fb1c4; margin:0; font-family:'Plus Jakarta Sans',sans-serif; }
+.ilpol-footer-social a { width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.25);
+  display:inline-flex; align-items:center; justify-content:center; color:#fff; text-decoration:none;
+  transition:background .2s; }
+.ilpol-footer-social a:hover { background:#C8932A; border-color:#C8932A; color:#0B2A4A; }
+.ilpol-footer-social svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+@media(max-width:980px){ .ilpol-footer-top{ grid-template-columns:1fr 1fr; } }
+@media(max-width:600px){ .ilpol-footer-top{ grid-template-columns:1fr; } }
