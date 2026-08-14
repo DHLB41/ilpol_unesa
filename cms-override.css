@@ -327,11 +327,32 @@ body.ilpol-theme #copyrights img {
 /* Scroll to top button */
 body.ilpol-theme .dmtop {
   background:#C8932A !important;
-  color:#0B2A4A !important;
+  color:transparent !important;
   font-family:'Plus Jakarta Sans',sans-serif !important;
   font-weight:700 !important;
-  font-size:12px !important;
+  font-size:0 !important;
+  width:44px !important; height:44px !important;
+  border-radius:50% !important;
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  overflow:hidden !important; line-height:44px !important;
+  box-shadow:0 8px 20px -8px rgba(11,42,74,.4) !important;
 }
+body.ilpol-theme .dmtop::before {
+  content:'\2191'; display:block; color:#0B2A4A; font-size:18px; font-weight:900;
+  line-height:1; font-family:Arial,sans-serif;
+}
+body.ilpol-theme .dmtop:hover { background:#F0C868 !important; }
+
+/* ── QUOTE BLOCK WRAPPER (native CMS "make-bg-full" carousel di atas footer) ── */
+body.ilpol-theme .make-bg-full,
+body.ilpol-theme .calloutbox-full-mini,
+body.ilpol-theme .long-twitter {
+  background:transparent !important; box-shadow:none !important; padding:0 !important; margin:0 !important;
+}
+body.ilpol-theme .make-bg-full .carousel-indicators,
+body.ilpol-theme .make-bg-full br { display:none !important; }
+body.ilpol-theme .make-bg-full .item { padding:0 !important; }
+body.ilpol-theme .make-bg-full .lead { margin:0 !important; }
 
 /* ── FOOTER MOCKUP (injected via JS) ───────────────────── */
 .ilpol-footer { background:#091E36; color:#cdd9e6; font-family:'Plus Jakarta Sans',sans-serif; }
