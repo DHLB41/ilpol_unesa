@@ -372,3 +372,53 @@ body.ilpol-theme .dmtop {
 .ilpol-footer-social svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
 @media(max-width:980px){ .ilpol-footer-top{ grid-template-columns:1fr 1fr; } }
 @media(max-width:600px){ .ilpol-footer-top{ grid-template-columns:1fr; } }
+
+/* ── HOMEPAGE "BODY" BLOCK — Bidang Kajian & Why-section ── */
+.ip-section { max-width:1200px; margin:0 auto; padding:56px 24px; }
+.ip-section-head { text-align:center; margin:0 0 36px; }
+.ip-eyebrow { font-family:'Plus Jakarta Sans',sans-serif; font-size:11px; font-weight:800;
+  letter-spacing:.14em; text-transform:uppercase; color:#C8932A; margin:0 0 8px; }
+.ip-section-head h2 { font-family:'Fraunces',Georgia,serif; color:#0B2A4A; font-size:24px;
+  margin:0 0 10px; line-height:1.25; }
+.ip-section-head p { font-family:'Plus Jakarta Sans',sans-serif; color:#5C6773; font-size:13px;
+  max-width:560px; margin:0 auto; line-height:1.7; }
+
+.ip-focus-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:32px; }
+.ip-focus-card { background:#fff; border:1px solid #DDE3EA; border-radius:16px; padding:24px;
+  transition:box-shadow .2s, transform .2s; }
+.ip-focus-card:hover { box-shadow:0 8px 20px -10px rgba(11,42,74,.22); transform:translateY(-3px); }
+.ip-focus-icon { width:44px; height:44px; border-radius:12px; background:#E7EEF5; color:#154A82;
+  display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.ip-focus-icon svg { width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:1.6;
+  stroke-linecap:round; stroke-linejoin:round; }
+.ip-focus-card h3 { font-family:'Fraunces',Georgia,serif; color:#0B2A4A; font-size:16px; margin:0 0 6px; }
+.ip-focus-card p { font-family:'Plus Jakarta Sans',sans-serif; color:#5C6773; font-size:13px; margin:0; line-height:1.6; }
+
+.ip-why-section { background:#F4F6F9; padding:56px 24px; width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw; }
+.ip-why-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:start; }
+.ip-why-inner .ip-eyebrow { text-align:left; }
+.ip-why-inner h2 { font-family:'Fraunces',Georgia,serif; color:#0B2A4A; font-size:24px; margin:0 0 12px; line-height:1.25; }
+.ip-why-inner > div:first-child p { font-family:'Plus Jakarta Sans',sans-serif; color:#5C6773; font-size:13px; line-height:1.75; }
+.ip-why-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.ip-why-card { background:#fff; border:1px solid #DDE3EA; border-radius:16px; padding:20px; }
+.ip-why-card .ip-num { font-family:'Fraunces',Georgia,serif; color:#C8932A; font-size:20px; font-weight:700; }
+.ip-why-card h3 { font-family:'Fraunces',Georgia,serif; color:#0B2A4A; font-size:15px; margin:8px 0 6px; }
+.ip-why-card p { font-family:'Plus Jakarta Sans',sans-serif; color:#5C6773; font-size:12.5px; margin:0; line-height:1.6; }
+
+@media(max-width:900px){
+  .ip-focus-grid { grid-template-columns:repeat(2,1fr); }
+  .ip-why-inner { grid-template-columns:1fr; }
+  .ip-why-grid { grid-template-columns:1fr; }
+}
+@media(max-width:560px){
+  .ip-focus-grid { grid-template-columns:1fr; }
+}
+
+/* ── HOMEPAGE "QUOTE" BLOCK ── */
+.ip-quote-band { background:linear-gradient(135deg,#0B2A4A,#154A82); padding:56px 24px; text-align:center;
+  width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw; }
+.ip-quote-band .ip-gold-rule { width:56px; height:3px; background:#C8932A; margin:0 auto 24px; border-radius:2px; }
+.ip-quote-band blockquote { font-family:'Fraunces',Georgia,serif; color:#fff; font-size:19px; font-style:italic;
+  max-width:760px; margin:0 auto 16px; line-height:1.5; }
+.ip-quote-band p { font-family:'Plus Jakarta Sans',sans-serif; color:#F0C868; font-size:12px;
+  letter-spacing:.04em; margin:0; }

@@ -13,14 +13,10 @@
 
   /* Mirror cms-override.css di sini secara berurutan.
      Kalau mirror pertama gagal dimuat (Netlify down/diblokir),
-     browser otomatis coba mirror berikutnya.
-     TODO: isi MIRROR_2 dengan hosting cadangan, misal:
-       - GitHub Pages: https://USERNAME.github.io/REPO/cms-override.css
-       - jsDelivr dari repo GitHub yang sama:
-         https://cdn.jsdelivr.net/gh/USERNAME/REPO/cms-override.css */
+     browser otomatis coba mirror berikutnya (jsDelivr dari repo GitHub). */
   var CSS_MIRRORS = [
-    BASE + '/cms-override.css?v=2.2'
-    /* , 'https://MIRROR_2/cms-override.css?v=2.2' */
+    BASE + '/cms-override.css?v=2.2',
+    'https://cdn.jsdelivr.net/gh/DHLB41/ilpol_unesa@main/cms-override.css'
   ];
 
   /* 1 ─ Google Fonts (Fraunces + Plus Jakarta Sans) */
