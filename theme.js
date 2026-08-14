@@ -1,22 +1,23 @@
 /**
  * ILPOL UNESA — CMS Theme Injector
- * Versi: 1.0 | https://ilpol-unesa.netlify.app/theme.js
+ * Versi: 1.1 | https://dhlb41.github.io/ilpol_unesa/theme.js
  *
  * Cara pakai di CMS:
- * Paste 1 baris ini di editor HTML setiap halaman (mode Source/HTML):
- *   <script src="https://ilpol-unesa.netlify.app/theme.js"></script>
+ * Paste baris ini di editor HTML setiap halaman (mode Source/HTML):
+ *   <script src="https://dhlb41.github.io/ilpol_unesa/theme.js" onerror="var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/DHLB41/ilpol_unesa@main/theme.js';document.head.appendChild(s);"></script>
  */
 (function () {
   'use strict';
 
-  var BASE = 'https://ilpol-unesa.netlify.app';
+  var BASE = 'https://dhlb41.github.io/ilpol_unesa';
 
   /* Mirror cms-override.css di sini secara berurutan.
-     Kalau mirror pertama gagal dimuat (Netlify down/diblokir),
-     browser otomatis coba mirror berikutnya (jsDelivr dari repo GitHub). */
+     Utama: GitHub Pages (gratis, auto-deploy tiap `git push`, tanpa kuota).
+     Kalau gagal, browser otomatis coba mirror berikutnya. */
   var CSS_MIRRORS = [
-    BASE + '/cms-override.css?v=2.2',
-    'https://cdn.jsdelivr.net/gh/DHLB41/ilpol_unesa@main/cms-override.css'
+    BASE + '/cms-override.css',
+    'https://cdn.jsdelivr.net/gh/DHLB41/ilpol_unesa@main/cms-override.css',
+    'https://ilpol-unesa.netlify.app/cms-override.css?v=2.2'
   ];
 
   /* 1 ─ Google Fonts (Fraunces + Plus Jakarta Sans) */
