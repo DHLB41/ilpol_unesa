@@ -414,6 +414,18 @@ body.ilpol-theme .dmtop {
   .ip-focus-grid { grid-template-columns:1fr; }
 }
 
+/* ── HALAMAN "SEJARAH" & konten prosa lainnya ── */
+.ip-prose { font-family:'Plus Jakarta Sans',sans-serif; color:#5C6773; font-size:13px; line-height:1.8; }
+.ip-prose p { margin:0 0 16px; }
+.ip-timeline { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; flex-direction:column; gap:0; }
+.ip-timeline-item { display:grid; grid-template-columns:96px 1fr; gap:24px; padding:22px 0;
+  border-bottom:1px solid #DDE3EA; }
+.ip-timeline-item:last-child { border-bottom:none; }
+.ip-timeline-year { font-family:'Fraunces',Georgia,serif; color:#C8932A; font-size:20px; font-weight:700; }
+.ip-timeline-item h4 { font-family:'Fraunces',Georgia,serif; color:#0B2A4A; font-size:16px; margin:0 0 6px; }
+.ip-timeline-item p { font-family:'Plus Jakarta Sans',sans-serif; color:#5C6773; font-size:13px; margin:0; line-height:1.7; }
+@media(max-width:600px){ .ip-timeline-item { grid-template-columns:1fr; gap:4px; } }
+
 /* ── HOMEPAGE "QUOTE" BLOCK ── */
 .ip-quote-band { background:linear-gradient(135deg,#0B2A4A,#154A82); padding:56px 24px; text-align:center;
   width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw; }
