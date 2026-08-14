@@ -607,10 +607,15 @@ body.ilpol-theme .owl-carousel .owl-dots { margin-top:16px !important; }
   background:linear-gradient(135deg,#154A82,#0B2A4A); display:flex; align-items:center; justify-content:center;
   width:100% !important; max-width:100% !important; }
 .ip-mhs-visual svg { width:64px; height:64px; stroke:#fff; fill:none; stroke-width:1.4; opacity:.9; position:relative; z-index:1; }
-body.ilpol-theme .ip-mhs-visual img {
-  position:relative !important; z-index:1 !important; width:60% !important; height:60% !important;
-  max-width:60% !important; max-height:60% !important; object-fit:cover !important; display:block !important;
-  border-radius:10px !important; margin:0 auto !important; box-shadow:0 12px 28px -10px rgba(0,0,0,.4) !important;
+.ip-mhs-visual-brand { position:relative; z-index:1; display:flex; flex-direction:column;
+  align-items:center; text-align:center; gap:16px; padding:0 32px; }
+body.ilpol-theme .ip-mhs-visual-brand img {
+  width:84px !important; height:84px !important; max-width:84px !important; max-height:84px !important;
+  object-fit:contain !important; margin:0 !important; border-radius:0 !important;
+}
+body.ilpol-theme .ip-mhs-visual-brand p {
+  color:#fff !important; font-family:'Fraunces',Georgia,serif !important; font-size:15px !important;
+  line-height:1.5 !important; margin:0 !important;
 }
 body.ilpol-theme .ip-mhs-text a.btn.btn-outline.dark {
   display:inline-flex !important; align-items:center !important; gap:6px !important;
