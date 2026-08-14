@@ -106,10 +106,12 @@
       });
     });
 
-    /* 7 ─ Sembunyikan kotak dekoratif gelap dari template CMS */
+    /* 7 ─ Sembunyikan kotak dekoratif gelap dari template CMS
+       (dikecualikan: area slider/banner agar tidak mengganggu init Revolution Slider) */
     setTimeout(function () {
       document.querySelectorAll('body *').forEach(function (el) {
         try {
+          if (el.closest('.slider-wrapper, .tp-banner-container, .tp-banner')) return;
           var rect = el.getBoundingClientRect();
           if (rect.top < 100 || rect.top > 320) return;
           if (rect.width < 15 || rect.width > 200) return;
