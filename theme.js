@@ -257,24 +257,16 @@
       if (origCopy) origCopy.style.setProperty('display', 'none', 'important');
     }
 
-    /* ── FIX: Video Profil — CMS kadang memindahkan <iframe> keluar dari
-       div pembungkus (.ip-video-frame) saat disimpan, sehingga video
-       muncul terpisah di bawah card kosong. Bungkus ulang via JS. ── */
+    /* ── FIX: Video Profil — hapus sisa div pembungkus kosong (jika ada
+       dari revisi sebelumnya) dan bersihkan <p><br></p> kosong dari editor.
+       Video kini di-style langsung via CSS aspect-ratio, tanpa wrapper. ── */
     var videoWrap = document.querySelector('.ip-video-wrap');
     if (videoWrap) {
-      /* Hapus .ip-video-frame kosong (sisa saat CMS memindahkan iframe keluar) */
       videoWrap.querySelectorAll('.ip-video-frame').forEach(function (f) {
-        if (!f.querySelector('iframe')) f.remove();
+        var ifr = f.querySelector('iframe');
+        if (ifr) { f.parentNode.insertBefore(ifr, f); }
+        f.remove();
       });
-      var looseIframes = videoWrap.querySelectorAll('iframe');
-      looseIframes.forEach(function (ifr) {
-        if (ifr.closest('.ip-video-frame')) return; /* sudah terbungkus dengan benar */
-        var frame = document.createElement('div');
-        frame.className = 'ip-video-frame';
-        ifr.parentNode.insertBefore(frame, ifr);
-        frame.appendChild(ifr);
-      });
-      /* Bersihkan <p><br></p> kosong sisa dari editor */
       videoWrap.querySelectorAll('p').forEach(function (p) {
         if (!p.textContent.trim() && !p.querySelector('iframe, img')) p.remove();
       });

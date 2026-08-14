@@ -706,5 +706,8 @@ body.ilpol-theme #main-content .ip-video-wrap h2 { color:#0B2A4A !important; fon
 body.ilpol-theme #main-content .ip-video-wrap p.ip-video-desc,
 body.ilpol-theme .blog-wrapper .ip-video-wrap p.ip-video-desc { color:#5C6773 !important; font-size:13px !important;
   text-align:center !important; max-width:560px !important; margin:0 auto 32px !important; line-height:1.7 !important; }
-.ip-video-frame { position:relative; width:100%; padding-top:56.25%; }
-.ip-video-frame iframe { position:absolute; inset:0; width:100% !important; height:100% !important; border:0 !important; }
+body.ilpol-theme #main-content .ip-video-wrap iframe,
+body.ilpol-theme .blog-wrapper .ip-video-wrap iframe {
+  width:100% !important; aspect-ratio:16/9 !important; height:auto !important;
+  max-width:100% !important; max-height:none !important; border:0 !important; display:block !important;
+}
