@@ -676,22 +676,21 @@ body.ilpol-theme .ip-cta-band a.btn-gold-lg {
 .ip-org-wrap { max-width:1100px; margin:0 auto; padding:8px 24px 56px; }
 .ip-org-lead { background:linear-gradient(135deg,#0B2A4A,#154A82); border-radius:20px; padding:32px 36px;
   text-align:center; margin:0 0 40px; }
-body.ilpol-theme .ip-org-lead p.ip-org-tag { color:#F0C868 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+body.ilpol-theme #main-content .ip-org-lead p.ip-org-tag,
+body.ilpol-theme .blog-wrapper .ip-org-lead p.ip-org-tag { color:#F0C868 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
   font-size:11px !important; font-weight:800 !important; letter-spacing:.14em !important; text-transform:uppercase !important; margin:0 0 8px !important; }
-body.ilpol-theme .ip-org-lead h3 { color:#fff !important; font-family:'Fraunces',Georgia,serif !important; font-size:22px !important; margin:0 0 6px !important; }
-body.ilpol-theme .ip-org-lead p.ip-org-role { color:#E7EEF5 !important; font-size:13px !important; margin:0 !important; }
+body.ilpol-theme #main-content .ip-org-lead h3 { color:#fff !important; font-family:'Fraunces',Georgia,serif !important; font-size:22px !important; margin:0 0 6px !important; }
+body.ilpol-theme #main-content .ip-org-lead p.ip-org-role,
+body.ilpol-theme .blog-wrapper .ip-org-lead p.ip-org-role { color:#E7EEF5 !important; font-size:13px !important; margin:0 !important; }
 .ip-org-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 .ip-org-card { background:#fff; border:1px solid #E4E9EF; border-left:4px solid #C8932A; border-radius:12px;
   padding:20px 22px; box-shadow:0 4px 14px -8px rgba(11,42,74,.15); }
-body.ilpol-theme .ip-org-card h4 { color:#0B2A4A !important; font-family:'Fraunces',Georgia,serif !important;
+body.ilpol-theme #main-content .ip-org-card h4 { color:#0B2A4A !important; font-family:'Fraunces',Georgia,serif !important;
   font-size:14.5px !important; margin:0 0 10px !important; line-height:1.4 !important; }
 .ip-org-card .ip-org-names { display:flex; flex-wrap:wrap; gap:6px; }
-body.ilpol-theme .ip-org-card .ip-org-names span {
+body.ilpol-theme #main-content .ip-org-card .ip-org-names span {
   background:#EAF1F8 !important; color:#154A82 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
   font-size:11.5px !important; font-weight:600 !important; padding:5px 10px !important; border-radius:20px !important;
 }
-.ip-org-sign { text-align:right; margin:44px 0 0; font-family:'Plus Jakarta Sans',sans-serif; }
-body.ilpol-theme .ip-org-sign p { color:#5C6773 !important; font-size:13px !important; margin:0 0 4px !important; }
-body.ilpol-theme .ip-org-sign p.ip-org-name { color:#0B2A4A !important; font-weight:800 !important; font-size:14px !important; margin-top:44px !important; }
 @media(max-width:820px){ .ip-org-grid { grid-template-columns:repeat(2,1fr); } }
 @media(max-width:560px){ .ip-org-grid { grid-template-columns:1fr; } .ip-org-lead{padding:26px 20px;} }
