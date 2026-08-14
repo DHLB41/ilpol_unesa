@@ -91,7 +91,7 @@
         'font-family:"Plus Jakarta Sans",sans-serif;font-size:.76rem;' +
         'font-weight:800;letter-spacing:.14em;text-transform:uppercase;' +
         'color:#F0C868;margin:0 0 10px;';
-      eyebrow.textContent = 'Program Studi Ilmu Politik · FISIP Unesa';
+      eyebrow.textContent = 'Program Studi Ilmu Politik · FISIPOL Unesa';
       pageTitle.parentNode.insertBefore(eyebrow, pageTitle);
     }
 
@@ -213,7 +213,7 @@
           '</div>' +
         '</div>' +
         '<div class="ilpol-footer-bottom">' +
-          '<p>&copy; 2026 Program Studi Ilmu Politik &mdash; FISIP Universitas Negeri Surabaya. Didukung oleh PPTI Universitas Negeri Surabaya.</p>' +
+          '<p>&copy; 2026 Program Studi Ilmu Politik &mdash; FISIPOL Universitas Negeri Surabaya. Didukung oleh PPTI Universitas Negeri Surabaya.</p>' +
           '<div class="ilpol-footer-social">' +
             '<a href="https://www.instagram.com/ilpol.unesa" target="_blank" rel="noopener" aria-label="Instagram Ilmu Politik Unesa">' + igSVG + '</a>' +
           '</div>' +
