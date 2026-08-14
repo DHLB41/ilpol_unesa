@@ -711,3 +711,22 @@ body.ilpol-theme .blog-wrapper .ip-video-wrap iframe {
   width:100% !important; aspect-ratio:16/9 !important; height:auto !important;
   max-width:100% !important; max-height:none !important; border:0 !important; display:block !important;
 }
+
+/* ── TUJUAN PAGE ── */
+.ip-goals-wrap { max-width:900px; margin:0 auto; padding:8px 24px 56px; }
+body.ilpol-theme #main-content .ip-goals-intro,
+body.ilpol-theme .blog-wrapper .ip-goals-intro {
+  color:#0B2A4A !important; font-family:'Fraunces',Georgia,serif !important; font-size:16px !important;
+  font-weight:600 !important; line-height:1.7 !important; text-align:center !important;
+  margin:0 0 36px !important; padding-bottom:28px !important; border-bottom:1px solid #E4E9EF !important;
+}
+.ip-goals-list { display:flex; flex-direction:column; gap:16px; }
+.ip-goals-item { display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #E4E9EF;
+  border-radius:12px; padding:18px 20px; box-shadow:0 4px 14px -10px rgba(11,42,74,.12); }
+.ip-goals-item .ip-goals-num { flex-shrink:0; width:32px; height:32px; border-radius:50%; background:#0B2A4A;
+  color:#F0C868; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',Georgia,serif;
+  font-size:14px; font-weight:700; }
+body.ilpol-theme #main-content .ip-goals-item p,
+body.ilpol-theme .blog-wrapper .ip-goals-item p {
+  color:#16212C !important; font-size:13px !important; line-height:1.75 !important; margin:6px 0 0 !important;
+}
