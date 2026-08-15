@@ -139,7 +139,27 @@
         '.ip-focus-card,.ip-why-card,.blog-carousel,#sidebar .widget,' +
           '.shop_carousel .shop_item,.ip-timeline-item{will-change:transform;}' +
         '.ip-focus-card,.blog-carousel,.shop_carousel .shop_item{transition:box-shadow .25s ease,transform .25s ease !important;}' +
-        '.ip-quote-band blockquote{transition:opacity .8s ease .1s,transform .8s ease .1s;}';
+        '.ip-quote-band blockquote{transition:opacity .8s ease .1s,transform .8s ease .1s;}' +
+        /* Reveal dari kiri/kanan untuk pasangan foto+teks (Sambutan, Mahasiswa) */
+        '.ip-reveal-left{opacity:0;transform:translateX(-28px);' +
+          'transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}' +
+        '.ip-reveal-left.ip-in{opacity:1;transform:translateX(0);}' +
+        '.ip-reveal-right{opacity:0;transform:translateX(28px);' +
+          'transition:opacity .7s cubic-bezier(.22,.61,.36,1) .1s,transform .7s cubic-bezier(.22,.61,.36,1) .1s;}' +
+        '.ip-reveal-right.ip-in{opacity:1;transform:translateX(0);}' +
+        /* Foto zoom-in halus saat masuk viewport */
+        '.ip-photo-reveal{opacity:0;transform:scale(1.08);' +
+          'transition:opacity .9s ease,transform 1.1s cubic-bezier(.22,.61,.36,1);}' +
+        '.ip-photo-reveal.ip-in{opacity:1;transform:scale(1);}' +
+        /* Garis aksen menggambar dari 0 ke lebar penuh */
+        '.ip-rule-draw{width:0 !important;transition:width .8s cubic-bezier(.22,.61,.36,1) .3s;}' +
+        '.ip-rule-draw.ip-in{width:48px !important;}' +
+        /* Tombol CTA sedikit membesar + glow saat hover, lebih premium */
+        '.ip-cta-band a.btn-gold-lg,.ip-mhs-text a.btn-outline.dark,.ip-kolab-card a.btn-outline-light{' +
+          'transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease,background .2s,color .2s !important;}' +
+        '.ip-cta-band a.btn-gold-lg:hover{box-shadow:0 10px 24px -8px rgba(200,147,42,.55) !important;}' +
+        '.ip-focus-icon,.ip-kolab-card .ip-icon,.ip-mhs-list-item .ip-icon{transition:transform .3s cubic-bezier(.34,1.56,.64,1);}' +
+        '.ip-focus-card:hover .ip-focus-icon,.ip-kolab-card:hover .ip-icon,.ip-mhs-list-item:hover .ip-icon{transform:scale(1.12) rotate(-4deg);}';
       document.head.appendChild(style);
 
       var io = new IntersectionObserver(function (entries) {
@@ -153,10 +173,12 @@
         '.card, article, [class*="post-item"], [class*="news-item"], ' +
         'section h2, section h3, .container>h2, .row>div>.card, ' +
         '.ip-focus-card, .ip-why-card, .ip-timeline-item, .ip-quote-band blockquote, ' +
-        '.blog-carousel, #sidebar .widget, .shop_carousel .shop_item';
+        '.blog-carousel, #sidebar .widget, .shop_carousel .shop_item, ' +
+        '.ip-section-head, .ip-kolab-card, .ip-cta-band h2, .ip-cta-band p, .ip-cta-band a.btn-gold-lg';
       /* Grid/list yang elemennya perlu stagger delay bertahap */
       var staggerGroups = document.querySelectorAll(
-        '.ip-focus-grid, .ip-why-grid, .blog-masonry, .shop_carousel, .ip-timeline'
+        '.ip-focus-grid, .ip-why-grid, .blog-masonry, .shop_carousel, .ip-timeline, ' +
+        '.ip-mhs-list, .ip-kolab-grid'
       );
       staggerGroups.forEach(function (group) {
         Array.prototype.forEach.call(group.children, function (child, i) {
@@ -169,9 +191,31 @@
         io.observe(el);
       });
 
+      /* Sambutan Kaprodi: teks masuk dari kiri, foto zoom-in dari kanan */
+      var sambutanText = document.querySelector('.ip-sambutan-text');
+      var sambutanPhoto = document.querySelector('.ip-sambutan-photo');
+      var sambutanRule  = document.querySelector('.ip-sambutan-rule');
+      if (sambutanText) { sambutanText.classList.add('ip-reveal-left'); io.observe(sambutanText); }
+      if (sambutanPhoto) { sambutanPhoto.classList.add('ip-photo-reveal'); io.observe(sambutanPhoto); }
+      if (sambutanRule) { sambutanRule.classList.add('ip-rule-draw'); io.observe(sambutanRule); }
+
+      /* Mahasiswa & Alumni: visual dari kiri, teks dari kanan */
+      var mhsVisual = document.querySelector('.ip-mhs-visual');
+      var mhsText   = document.querySelector('.ip-mhs-text');
+      if (mhsVisual) { mhsVisual.classList.add('ip-reveal-left'); io.observe(mhsVisual); }
+      if (mhsText) { mhsText.classList.add('ip-reveal-right'); io.observe(mhsText); }
+      document.querySelectorAll('.ip-mhs-list-item').forEach(function (el, i) {
+        el.classList.add('ip-reveal');
+        el.style.setProperty('--ip-delay', (i * 90 + 150) + 'ms');
+        io.observe(el);
+      });
+
       /* Safety net: reveal semua setelah 1.5 detik */
       setTimeout(function () {
-        document.querySelectorAll('.ip-reveal:not(.ip-in)').forEach(function (el) {
+        document.querySelectorAll(
+          '.ip-reveal:not(.ip-in), .ip-reveal-left:not(.ip-in), .ip-reveal-right:not(.ip-in), ' +
+          '.ip-photo-reveal:not(.ip-in), .ip-rule-draw:not(.ip-in)'
+        ).forEach(function (el) {
           el.classList.add('ip-in');
         });
       }, 1500);
