@@ -600,6 +600,30 @@ body.ilpol-theme .shop_carousel .magnifier .buttons .btn {
 body.ilpol-theme .owl-carousel .owl-nav,
 body.ilpol-theme .owl-carousel .owl-dots { margin-top:16px !important; }
 
+/* ── HOMEPAGE "PEMINATAN DAN BIDANG KAJIAN" ── */
+.ip-peminatan-wrap { max-width:1200px; margin:0 auto; padding:56px 24px 64px; }
+body.ilpol-theme .ip-peminatan-wrap h2 {
+  color:#0B2A4A !important; font-family:'Plus Jakarta Sans',sans-serif !important; font-size:20px !important;
+  font-weight:800 !important; letter-spacing:.02em !important; text-transform:uppercase !important;
+  margin:0 0 20px !important;
+}
+.ip-peminatan-grid { display:grid; grid-template-columns:repeat(3,1fr); border-radius:14px; overflow:hidden;
+  box-shadow:0 12px 30px -16px rgba(11,42,74,.3); }
+.ip-peminatan-col { padding:26px 26px 32px; }
+.ip-peminatan-col:nth-child(1) { background:#0B2A4A; }
+.ip-peminatan-col:nth-child(2) { background:#1B5FA0; }
+.ip-peminatan-col:nth-child(3) { background:#2E7EA6; }
+body.ilpol-theme .ip-peminatan-col h3 {
+  color:#fff !important; font-family:'Plus Jakarta Sans',sans-serif !important; font-size:14px !important;
+  font-weight:800 !important; text-transform:uppercase !important; letter-spacing:.02em !important;
+  margin:0 0 16px !important; line-height:1.4 !important;
+}
+body.ilpol-theme .ip-peminatan-col p {
+  color:#E7EEF5 !important; font-size:13px !important; line-height:1.75 !important; margin:0 !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+}
+@media(max-width:820px){ .ip-peminatan-grid { grid-template-columns:1fr; } }
+
 /* ── HOMEPAGE "MAHASISWA & ALUMNI" ── */
 .ip-mhs-inner { max-width:1200px; margin:0 auto; padding:56px 24px; display:grid;
   grid-template-columns:0.85fr 1.15fr; gap:48px; align-items:center; }
