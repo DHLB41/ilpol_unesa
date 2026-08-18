@@ -259,6 +259,9 @@
               '<li><a href="' + base + '/page/dosen">Dosen &amp; Staf</a></li>' +
               '<li><a href="' + base + '/page/buku-modul">Akademik</a></li>' +
               '<li><a href="' + base + '/page/jurnal-ilmu-politik">Penelitian &amp; Publikasi</a></li>' +
+              '<li><a href="' + base + '/archive">Berita</a></li>' +
+              '<li><a href="' + base + '/agendas">Agenda</a></li>' +
+              '<li><a href="' + base + '/informations">Informasi</a></li>' +
             '</ul>' +
           '</div>' +
           '<div class="ilpol-footer-col">' +
