@@ -51,7 +51,7 @@
   }
 
   // Scroll reveal
-  var revealEls = document.querySelectorAll('.reveal');
+  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   if('IntersectionObserver' in window){
     var observer = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
@@ -67,7 +67,7 @@
   }
   // Safety net: guarantee no section stays invisible (e.g. fast scroll, anchor jump, or print/screenshot)
   setTimeout(function(){
-    document.querySelectorAll('.reveal:not(.in-view)').forEach(function(el){
+    document.querySelectorAll('.reveal:not(.in-view), .reveal-left:not(.in-view), .reveal-right:not(.in-view)').forEach(function(el){
       el.classList.add('in-view');
     });
   }, 1200);
