@@ -458,7 +458,8 @@ body.ilpol-theme .ip-sambutan-text p { color:#EAEEF7 !important; font-size:13px 
 }
 
 /* ── HALAMAN "SEJARAH" & konten prosa lainnya ── */
-.ip-prose { font-family:'Plus Jakarta Sans',sans-serif; color:#5C6773; font-size:13px; line-height:1.8; }
+.ip-prose { font-family:'Plus Jakarta Sans',sans-serif; color:#5C6773; font-size:13px; line-height:1.8;
+  max-width:760px; margin:0 auto; padding:0 24px; }
 .ip-prose p { margin:0 0 16px; }
 .ip-timeline { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; flex-direction:column; gap:0; }
 .ip-timeline-item { display:grid; grid-template-columns:96px 1fr; gap:24px; padding:22px 0;
