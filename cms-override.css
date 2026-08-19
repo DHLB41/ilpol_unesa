@@ -435,6 +435,7 @@ body.ilpol-theme .ip-sambutan-text p { color:#EAEEF7 !important; font-size:13px 
   stroke-linecap:round; stroke-linejoin:round; }
 .ip-focus-card h3 { font-family:'Fraunces',Georgia,serif; color:#0B2A4A; font-size:16px; margin:0 0 6px; }
 .ip-focus-card p { font-family:'Plus Jakarta Sans',sans-serif; color:#5C6773; font-size:13px; margin:0; line-height:1.6; }
+.ip-focus-card .ip-focus-tag { color:#C8932A; font-weight:800; font-size:11px; letter-spacing:.06em; margin:0 0 8px; }
 
 .ip-why-section { background:#F4F6F9; padding:56px 24px; width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw; }
 .ip-why-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:start; }
