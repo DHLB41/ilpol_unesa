@@ -716,6 +716,16 @@ body.ilpol-theme .blog-wrapper .ip-video-wrap iframe {
   max-width:100% !important; max-height:none !important; border:0 !important; display:block !important;
 }
 
+/* ── CPL ACCORDION (dipakai di halaman Visi, Misi & Tujuan) ── */
+.ip-accordion-item { border:1px solid #DDE3EA; border-radius:12px; margin-bottom:12px; overflow:hidden; background:#fff; }
+.ip-accordion-item summary { cursor:pointer; padding:16px 20px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700;
+  color:#0B2A4A; font-size:14px; list-style:none; display:flex; justify-content:space-between; align-items:center; }
+.ip-accordion-item summary::-webkit-details-marker { display:none; }
+.ip-accordion-item summary::after { content:'\002B'; font-size:18px; color:#C8932A; transition:transform .2s; flex-shrink:0; margin-left:12px; }
+.ip-accordion-item[open] summary::after { content:'\2212'; }
+.ip-accordion-item ol { margin:0; padding:0 20px 18px 40px; color:#5C6773; font-size:13px; line-height:1.8; font-family:'Plus Jakarta Sans',sans-serif; }
+.ip-accordion-item ol li { margin-bottom:8px; }
+
 /* ── TUJUAN PAGE ── */
 .ip-goals-wrap { max-width:900px; margin:0 auto; padding:8px 24px 56px; }
 body.ilpol-theme #main-content .ip-goals-intro,

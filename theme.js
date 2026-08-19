@@ -174,11 +174,12 @@
         'section h2, section h3, .container>h2, .row>div>.card, ' +
         '.ip-focus-card, .ip-why-card, .ip-timeline-item, .ip-quote-band blockquote, ' +
         '.blog-carousel, #sidebar .widget, .shop_carousel .shop_item, ' +
-        '.ip-section-head, .ip-kolab-card, .ip-cta-band h2, .ip-cta-band p, .ip-cta-band a.btn-gold-lg';
+        '.ip-section-head, .ip-kolab-card, .ip-cta-band h2, .ip-cta-band p, .ip-cta-band a.btn-gold-lg, ' +
+        '.ip-goals-item, .ip-accordion-item, .ip-prose h2, .ip-prose blockquote, .ip-goals-intro';
       /* Grid/list yang elemennya perlu stagger delay bertahap */
       var staggerGroups = document.querySelectorAll(
         '.ip-focus-grid, .ip-why-grid, .blog-masonry, .shop_carousel, .ip-timeline, ' +
-        '.ip-mhs-list, .ip-kolab-grid'
+        '.ip-mhs-list, .ip-kolab-grid, .ip-goals-list'
       );
       staggerGroups.forEach(function (group) {
         Array.prototype.forEach.call(group.children, function (child, i) {
