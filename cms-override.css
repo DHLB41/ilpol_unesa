@@ -741,3 +741,37 @@ body.ilpol-theme #main-content .ip-goals-item p,
 body.ilpol-theme .blog-wrapper .ip-goals-item p {
   color:#16212C !important; font-size:13px !important; line-height:1.75 !important; margin:0 !important;
 }
+
+/* ── AKREDITASI PAGE ── */
+.ip-akred-wrap { max-width:900px; margin:0 auto; padding:8px 24px 56px; }
+.ip-akred-lead { background:linear-gradient(135deg,#0B2A4A,#154A82); border-radius:20px; padding:40px 36px;
+  text-align:center; margin:0 0 32px; }
+body.ilpol-theme #main-content .ip-akred-lead p.ip-org-tag,
+body.ilpol-theme .blog-wrapper .ip-akred-lead p.ip-org-tag { color:#F0C868 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:11px !important; font-weight:800 !important; letter-spacing:.14em !important; text-transform:uppercase !important; margin:0 0 10px !important; }
+body.ilpol-theme #main-content .ip-akred-lead h3 { color:#fff !important; font-family:'Fraunces',Georgia,serif !important; font-size:32px !important; margin:0 0 10px !important; letter-spacing:.02em !important; }
+body.ilpol-theme #main-content .ip-akred-lead p.ip-org-role,
+body.ilpol-theme .blog-wrapper .ip-akred-lead p.ip-org-role { color:#E7EEF5 !important; font-size:13px !important; margin:0 !important; line-height:1.7 !important; }
+.ip-akred-score { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.12);
+  border:1px solid rgba(240,200,104,.4); border-radius:999px; padding:8px 22px; margin:18px 0 0; }
+body.ilpol-theme #main-content .ip-akred-score span,
+body.ilpol-theme .blog-wrapper .ip-akred-score span { color:#F0C868 !important; font-family:'Fraunces',Georgia,serif !important;
+  font-size:15px !important; font-weight:700 !important; }
+
+.ip-akred-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:0 0 8px; }
+.ip-akred-item { background:#fff; border:1px solid #E4E9EF; border-left:4px solid #C8932A; border-radius:12px;
+  padding:16px 20px; box-shadow:0 4px 14px -10px rgba(11,42,74,.12); }
+body.ilpol-theme #main-content .ip-akred-item .ip-akred-label,
+body.ilpol-theme .blog-wrapper .ip-akred-item .ip-akred-label { color:#8592A0 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:10.5px !important; font-weight:700 !important; letter-spacing:.08em !important; text-transform:uppercase !important; margin:0 0 4px !important; }
+body.ilpol-theme #main-content .ip-akred-item .ip-akred-value,
+body.ilpol-theme .blog-wrapper .ip-akred-item .ip-akred-value { color:#0B2A4A !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:13.5px !important; font-weight:700 !important; margin:0 !important; line-height:1.5 !important; }
+
+.ip-akred-note { font-family:'Plus Jakarta Sans',sans-serif; color:#8592A0; font-size:11.5px; line-height:1.7;
+  text-align:center; margin:20px 0 0; }
+
+@media(max-width:560px){
+  .ip-akred-grid { grid-template-columns:1fr; }
+  .ip-akred-lead { padding:30px 22px; }
+}
