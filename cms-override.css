@@ -250,11 +250,6 @@ body.ilpol-theme #copyrights { background:#061528 !important; }
 body.ilpol-theme #copyrights,body.ilpol-theme #copyrights a {
   color:#9fb1c4 !important; font-size:12px !important;
 }
-body.ilpol-theme .dmtop {
-  background:#C8932A !important; color:#0B2A4A !important;
-  font-family:'Plus Jakarta Sans',sans-serif !important;
-  font-weight:700 !important;
-}
 
 /* ── FOOTER DETAIL (berdasarkan struktur HTML CMS asli) ── */
 body.ilpol-theme #footer-style-1 {
