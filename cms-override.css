@@ -713,6 +713,10 @@ body.ilpol-theme .blog-wrapper .ip-video-wrap iframe {
   max-width:100% !important; max-height:none !important; border:0 !important; display:block !important;
 }
 
+/* ── KURIKULUM & CPL PAGE ── */
+.ip-kurikulum-wrap { max-width:820px; margin:0 auto; padding:8px 24px 40px; }
+.ip-kurikulum-section-gap { margin:0 0 44px; }
+
 /* ── CPL ACCORDION (dipakai di halaman Visi, Misi & Tujuan) ── */
 .ip-accordion-item { border:1px solid #DDE3EA; border-radius:12px; margin-bottom:12px; overflow:hidden; background:#fff; }
 .ip-accordion-item summary { cursor:pointer; padding:16px 20px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700;
