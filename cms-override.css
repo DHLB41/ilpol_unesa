@@ -748,6 +748,8 @@ body.ilpol-theme #main-content .ip-kur-table td.ip-kur-muted,
 body.ilpol-theme .blog-wrapper .ip-kur-table td.ip-kur-muted { color:#C6CFDA !important; text-align:center !important; }
 body.ilpol-theme #main-content .ip-kur-table tr:last-child td,
 body.ilpol-theme .blog-wrapper .ip-kur-table tr:last-child td { border-bottom:none !important; }
+.ip-accordion-item .ip-kur-table-wrap { margin:0 16px 16px; border-radius:10px; }
+.ip-accordion-item .ip-doc-empty { margin:0 16px 16px; }
 
 /* ── CPL ACCORDION (dipakai di halaman Visi, Misi & Tujuan) ── */
 .ip-accordion-item { border:1px solid #DDE3EA; border-radius:12px; margin-bottom:12px; overflow:hidden; background:#fff; }
