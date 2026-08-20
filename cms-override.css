@@ -845,3 +845,31 @@ body.ilpol-theme .blog-wrapper .ip-doc-empty p { color:#8592A0 !important; font-
   body.ilpol-theme #main-content a.ip-doc-download,
   body.ilpol-theme .blog-wrapper a.ip-doc-download { width:100%; justify-content:center; }
 }
+
+/* ── DOSEN TAMU / UNDANGAN PAGE ── */
+.ip-tamu-wrap { max-width:860px; margin:0 auto; padding:8px 24px 56px; }
+.ip-tamu-list { display:flex; flex-direction:column; gap:14px; }
+.ip-tamu-row { display:flex; align-items:center; gap:18px; background:#fff; border:1px solid #E4E9EF;
+  border-radius:14px; padding:18px 20px; box-shadow:0 4px 14px -10px rgba(11,42,74,.12); }
+.ip-tamu-avatar { flex-shrink:0; width:54px; height:54px; border-radius:50%; display:flex; align-items:center;
+  justify-content:center; font-family:'Fraunces',Georgia,serif; font-size:16px; font-weight:700; color:#fff; }
+.ip-tamu-info { flex:1 1 auto; min-width:0; }
+body.ilpol-theme #main-content .ip-tamu-info h4,
+body.ilpol-theme .blog-wrapper .ip-tamu-info h4 { color:#0B2A4A !important; font-family:'Fraunces',Georgia,serif !important;
+  font-size:15.5px !important; margin:0 0 3px !important; line-height:1.4 !important; }
+body.ilpol-theme #main-content .ip-tamu-info .ip-tamu-affil,
+body.ilpol-theme .blog-wrapper .ip-tamu-info .ip-tamu-affil { color:#5C6773 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:12.5px !important; margin:0 0 6px !important; line-height:1.5 !important; }
+body.ilpol-theme #main-content .ip-tamu-info .ip-tamu-topic,
+body.ilpol-theme .blog-wrapper .ip-tamu-info .ip-tamu-topic { display:inline-block !important; color:#154A82 !important;
+  background:#EAF1F8 !important; font-family:'Plus Jakarta Sans',sans-serif !important; font-size:11px !important;
+  font-weight:600 !important; padding:4px 10px !important; border-radius:20px !important; margin:0 !important; }
+
+.ip-tamu-placeholder-note { background:#FFF8EA; border:1px dashed #E8C97A; border-radius:12px; padding:16px 20px; margin:0 0 24px; }
+body.ilpol-theme #main-content .ip-tamu-placeholder-note p,
+body.ilpol-theme .blog-wrapper .ip-tamu-placeholder-note p { color:#8A6412 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:12px !important; margin:0 !important; line-height:1.7 !important; }
+
+@media(max-width:560px){
+  .ip-tamu-row { flex-wrap:wrap; }
+}
