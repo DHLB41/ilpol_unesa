@@ -714,8 +714,40 @@ body.ilpol-theme .blog-wrapper .ip-video-wrap iframe {
 }
 
 /* ── KURIKULUM & CPL PAGE ── */
-.ip-kurikulum-wrap { max-width:820px; margin:0 auto; padding:8px 24px 40px; }
+.ip-kurikulum-wrap { max-width:1100px; margin:0 auto; padding:8px 24px 40px; }
 .ip-kurikulum-section-gap { margin:0 0 44px; }
+.ip-kurikulum-wrap .ip-prose-narrow { max-width:820px; margin:0 auto; }
+
+.ip-kur-table-wrap { overflow-x:auto; border:1px solid #DDE3EA; border-radius:12px; }
+.ip-kur-table { width:100%; border-collapse:collapse; font-family:'Plus Jakarta Sans',sans-serif; font-size:12.5px; min-width:820px; }
+body.ilpol-theme #main-content .ip-kur-table thead th,
+body.ilpol-theme .blog-wrapper .ip-kur-table thead th {
+  background:#0B2A4A !important; color:#F0C868 !important; text-align:left !important; padding:11px 12px !important;
+  font-size:10.5px !important; text-transform:uppercase !important; letter-spacing:.06em !important; font-weight:700 !important;
+  white-space:nowrap !important;
+}
+body.ilpol-theme #main-content .ip-kur-table td,
+body.ilpol-theme .blog-wrapper .ip-kur-table td {
+  padding:9px 12px !important; border-bottom:1px solid #E4E9EF !important; color:#16212C !important; vertical-align:top !important;
+}
+body.ilpol-theme #main-content .ip-kur-table tr.ip-kur-semester td,
+body.ilpol-theme .blog-wrapper .ip-kur-table tr.ip-kur-semester td {
+  background:#EAF1F8 !important; font-weight:700 !important; color:#0B2A4A !important;
+  font-family:'Fraunces',Georgia,serif !important; font-size:13px !important;
+}
+body.ilpol-theme #main-content .ip-kur-table tr.ip-kur-category td,
+body.ilpol-theme .blog-wrapper .ip-kur-table tr.ip-kur-category td {
+  background:#F8F9FB !important; font-weight:700 !important; color:#5C6773 !important;
+  font-size:11px !important; text-transform:uppercase !important; letter-spacing:.05em !important;
+}
+body.ilpol-theme #main-content .ip-kur-table td.ip-kur-num,
+body.ilpol-theme .blog-wrapper .ip-kur-table td.ip-kur-num { color:#8592A0 !important; }
+body.ilpol-theme #main-content .ip-kur-table td.ip-kur-sks,
+body.ilpol-theme .blog-wrapper .ip-kur-table td.ip-kur-sks { text-align:center !important; font-weight:700 !important; color:#0B2A4A !important; }
+body.ilpol-theme #main-content .ip-kur-table td.ip-kur-muted,
+body.ilpol-theme .blog-wrapper .ip-kur-table td.ip-kur-muted { color:#C6CFDA !important; text-align:center !important; }
+body.ilpol-theme #main-content .ip-kur-table tr:last-child td,
+body.ilpol-theme .blog-wrapper .ip-kur-table tr:last-child td { border-bottom:none !important; }
 
 /* ── CPL ACCORDION (dipakai di halaman Visi, Misi & Tujuan) ── */
 .ip-accordion-item { border:1px solid #DDE3EA; border-radius:12px; margin-bottom:12px; overflow:hidden; background:#fff; }
@@ -807,7 +839,8 @@ body.ilpol-theme .blog-wrapper .ip-dosen-card h4 { color:#0B2A4A !important; fon
 .ip-docs-wrap { max-width:860px; margin:0 auto; padding:8px 24px 56px; }
 body.ilpol-theme #main-content .ip-docs-intro,
 body.ilpol-theme .blog-wrapper .ip-docs-intro { color:#5C6773 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
-  font-size:13px !important; line-height:1.8 !important; text-align:center !important; margin:0 0 32px !important; }
+  font-size:13px !important; line-height:1.8 !important; text-align:center !important; margin:0 auto 32px !important;
+  max-width:680px !important; }
 
 .ip-doc-group { margin:0 0 32px; }
 body.ilpol-theme #main-content .ip-doc-group-title,
