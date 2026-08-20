@@ -941,3 +941,49 @@ body.ilpol-theme #main-content .ip-mbkm-highlight a,
 body.ilpol-theme .blog-wrapper .ip-mbkm-highlight a { color:#0B2A4A !important; font-weight:700 !important; text-decoration:underline !important; }
 
 @media(max-width:560px){ .ip-mbkm-highlight { flex-direction:column; align-items:flex-start; } }
+
+/* ── KALENDER AKADEMIK PAGE ── */
+.ip-kalender-wrap { max-width:1100px; margin:0 auto; padding:8px 24px 56px; }
+.ip-kalender-layout { display:grid; grid-template-columns:220px 1fr; gap:28px; align-items:start; }
+.ip-kalender-years { display:flex; flex-direction:column; gap:10px; }
+body.ilpol-theme #main-content .ip-kalender-year-btn,
+body.ilpol-theme .blog-wrapper .ip-kalender-year-btn {
+  display:flex !important; align-items:center !important; gap:10px !important; background:#fff !important;
+  border:1px solid #DDE3EA !important; border-radius:12px !important; padding:14px 16px !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important; font-size:13px !important; font-weight:700 !important;
+  color:#5C6773 !important; text-decoration:none !important;
+}
+body.ilpol-theme #main-content .ip-kalender-year-btn.is-active,
+body.ilpol-theme .blog-wrapper .ip-kalender-year-btn.is-active {
+  background:#0B2A4A !important; border-color:#0B2A4A !important; color:#fff !important;
+}
+.ip-kalender-year-btn svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.8; flex-shrink:0; }
+
+.ip-kalender-poster { background:#fff; border:1px solid #DDE3EA; border-radius:16px; padding:32px 24px;
+  text-align:center; margin:0 0 24px; }
+.ip-kalender-poster-icon { width:52px; height:52px; border-radius:14px; background:#E7EEF5; color:#154A82;
+  display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
+.ip-kalender-poster-icon svg { width:26px; height:26px; stroke:currentColor; fill:none; stroke-width:1.6;
+  stroke-linecap:round; stroke-linejoin:round; }
+body.ilpol-theme #main-content .ip-kalender-poster p,
+body.ilpol-theme .blog-wrapper .ip-kalender-poster p { color:#8592A0 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:12.5px !important; margin:0 !important; line-height:1.7 !important; max-width:420px !important; margin:0 auto !important; }
+
+.ip-kalender-legend { display:grid; grid-template-columns:repeat(2,1fr); gap:10px 24px; }
+.ip-kalender-legend-item { display:flex; align-items:baseline; gap:8px; padding:8px 0; border-bottom:1px solid #EEF1F5; }
+body.ilpol-theme #main-content .ip-kalender-legend-item .ip-kalender-abbr,
+body.ilpol-theme .blog-wrapper .ip-kalender-legend-item .ip-kalender-abbr {
+  color:#0B2A4A !important; font-family:'Plus Jakarta Sans',sans-serif !important; font-size:12.5px !important;
+  font-weight:800 !important; flex-shrink:0 !important; width:64px !important;
+}
+body.ilpol-theme #main-content .ip-kalender-legend-item .ip-kalender-desc,
+body.ilpol-theme .blog-wrapper .ip-kalender-legend-item .ip-kalender-desc {
+  color:#5C6773 !important; font-family:'Plus Jakarta Sans',sans-serif !important; font-size:12.5px !important; line-height:1.6 !important;
+}
+
+@media(max-width:820px){
+  .ip-kalender-layout { grid-template-columns:1fr; }
+  .ip-kalender-years { flex-direction:row; flex-wrap:wrap; }
+  .ip-kalender-years .ip-kalender-year-btn { flex:1 1 auto; }
+}
+@media(max-width:560px){ .ip-kalender-legend { grid-template-columns:1fr; } }
