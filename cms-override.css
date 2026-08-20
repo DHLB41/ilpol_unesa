@@ -865,11 +865,6 @@ body.ilpol-theme .blog-wrapper .ip-tamu-info .ip-tamu-topic { display:inline-blo
   background:#EAF1F8 !important; font-family:'Plus Jakarta Sans',sans-serif !important; font-size:11px !important;
   font-weight:600 !important; padding:4px 10px !important; border-radius:20px !important; margin:0 !important; }
 
-.ip-tamu-placeholder-note { background:#FFF8EA; border:1px dashed #E8C97A; border-radius:12px; padding:16px 20px; margin:0 0 24px; }
-body.ilpol-theme #main-content .ip-tamu-placeholder-note p,
-body.ilpol-theme .blog-wrapper .ip-tamu-placeholder-note p { color:#8A6412 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
-  font-size:12px !important; margin:0 !important; line-height:1.7 !important; }
-
 @media(max-width:560px){
   .ip-tamu-row { flex-wrap:wrap; }
 }
