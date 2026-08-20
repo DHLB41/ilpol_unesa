@@ -750,6 +750,7 @@ body.ilpol-theme #main-content .ip-kur-table tr:last-child td,
 body.ilpol-theme .blog-wrapper .ip-kur-table tr:last-child td { border-bottom:none !important; }
 .ip-accordion-item .ip-kur-table-wrap { margin:0 16px 16px; border-radius:10px; }
 .ip-accordion-item .ip-doc-empty { margin:0 16px 16px; }
+.ip-accordion-item .ip-doc-list { margin:0 16px 16px; gap:8px; }
 
 /* ── CPL ACCORDION (dipakai di halaman Visi, Misi & Tujuan) ── */
 .ip-accordion-item { border:1px solid #DDE3EA; border-radius:12px; margin-bottom:12px; overflow:hidden; background:#fff; }
@@ -873,6 +874,13 @@ body.ilpol-theme .blog-wrapper a.ip-doc-download {
 body.ilpol-theme #main-content a.ip-doc-download:hover,
 body.ilpol-theme .blog-wrapper a.ip-doc-download:hover { background:#154A82 !important; }
 .ip-doc-download svg { width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2; }
+
+body.ilpol-theme #main-content .ip-doc-status,
+body.ilpol-theme .blog-wrapper .ip-doc-status {
+  flex-shrink:0 !important; display:inline-flex !important; align-items:center !important;
+  background:#F4F6F9 !important; color:#8592A0 !important; border-radius:8px !important; padding:8px 14px !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important; font-size:11.5px !important; font-weight:700 !important;
+}
 
 .ip-doc-empty { background:#F4F6F9; border:1px dashed #DDE3EA; border-radius:12px; padding:28px 20px; text-align:center; }
 body.ilpol-theme #main-content .ip-doc-empty p,
