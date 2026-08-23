@@ -995,3 +995,18 @@ body.ilpol-theme .blog-wrapper .ip-kalender-legend-item .ip-kalender-desc {
   .ip-kalender-years .ip-kalender-year-btn { flex:1 1 auto; }
 }
 @media(max-width:560px){ .ip-kalender-legend { grid-template-columns:1fr; } }
+
+/* ── PANDUAN TUGAS AKHIR / SKRIPSI PAGE (juga dipakai sebagai info-box generik) ── */
+.ip-ta-wrap { max-width:900px; margin:0 auto; padding:8px 24px 56px; }
+.ip-info-callout { display:flex; align-items:center; gap:18px; background:#FBEFD9; border:1px solid #E8C97A;
+  border-radius:16px; padding:20px 24px; margin:0 0 40px; }
+.ip-info-callout .ip-info-callout-icon { flex-shrink:0; width:44px; height:44px; border-radius:12px;
+  background:#C8932A; color:#fff; display:flex; align-items:center; justify-content:center; }
+.ip-info-callout .ip-info-callout-icon svg { width:22px; height:22px; stroke:currentColor; fill:none;
+  stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+body.ilpol-theme #main-content .ip-info-callout p,
+body.ilpol-theme .blog-wrapper .ip-info-callout p { color:#5C4008 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:13px !important; margin:0 !important; line-height:1.7 !important; }
+body.ilpol-theme #main-content .ip-info-callout strong,
+body.ilpol-theme .blog-wrapper .ip-info-callout strong { color:#3D2B00 !important; }
+@media(max-width:560px){ .ip-info-callout { flex-direction:column; align-items:flex-start; } }
