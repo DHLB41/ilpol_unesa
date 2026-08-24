@@ -2,12 +2,20 @@
   KONTEN CMS — Halaman "Profil & Kegiatan Mahasiswa"
   Paste seluruh blok ini ke dalam Body/editor HTML halaman CMS.
   Layout dua-kolom memakai komponen ip-mhs-* yang sama dengan section
-  "Mahasiswa & Alumni" di beranda, supaya halaman ini terasa selevel
-  dengan halaman lain (bukan cuma satu paragraf).
+  "Mahasiswa & Alumni" di beranda.
   Bagian yang sekarang jadi halaman sendiri (Organisasi Mahasiswa,
   Prestasi Mahasiswa, Alumni, Beasiswa) tidak diulang penuh di sini,
   hanya ringkasan. Bagian "Rekognisi Dosen" (klaim Interview Wapres/
   Pemantau Pemilu AS) dibuang karena tidak terverifikasi.
+
+  "Kegiatan Terkini" LIVE: script di bawah fetch halaman
+  https://ilpol.fisipol.unesa.ac.id/archive (arsip berita CMS,
+  same-origin dari browser pengunjung — tidak kena CORS) dan
+  menampilkan 3 berita terbaru secara otomatis. CMS ini tidak
+  membedakan kategori per topik (cuma ada 1 kategori "Berita"),
+  jadi ini menarik berita/kegiatan terbaru apa pun, bukan yang
+  disaring khusus "kemahasiswaan". 3 item hardcode di bawah cuma
+  fallback kalau fetch gagal (mis. JS diblokir, endpoint berubah).
 ============================================================ -->
 
 <script src="https://dhlb41.github.io/ilpol_unesa/theme.js" onerror="var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/DHLB41/ilpol_unesa@main/theme.js';document.head.appendChild(s);"></script>
@@ -45,25 +53,86 @@
   <div class="ip-section-head ip-reveal ip-in">
     <p class="ip-eyebrow">Kegiatan</p>
     <h2>Kegiatan Terkini</h2>
-    <p>Sebagian kegiatan kemahasiswaan terbaru Program Studi Ilmu Politik.</p>
+    <p>Berita &amp; kegiatan terbaru Program Studi Ilmu Politik, diambil otomatis dari arsip berita.</p>
   </div>
-  <div class="ip-event-list ip-reveal ip-in">
+  <div class="ip-event-list ip-reveal ip-in" id="ip-live-events">
     <div class="ip-event-item">
-      <div class="ip-event-date"><span class="ip-event-day">14</span><span class="ip-event-month">Jun 2026</span></div>
-      <div class="ip-event-info"><h4>LKMM-TD Himpunan Mahasiswa Ilmu Politik 2026</h4><p>Latihan Keterampilan Manajemen Mahasiswa Tingkat Dasar</p></div>
+      <div class="ip-event-date"><span class="ip-event-day">30</span><span class="ip-event-month">Jul 2026</span></div>
+      <div class="ip-event-info"><h4>Kunjungan Prodi Ilmu Politik UIN Alauddin Makassar Perkuat Sinergi dan Kerjasama dengan Ilmu Politik Unesa</h4></div>
     </div>
     <div class="ip-event-item">
-      <div class="ip-event-date"><span class="ip-event-day">14</span><span class="ip-event-month">Jun 2026</span></div>
-      <div class="ip-event-info"><h4>BISIK BIPALA 2026: Berbincang Sosial Politik dan Budaya</h4><p>Antara Pasar dan Pasal</p></div>
+      <div class="ip-event-date"><span class="ip-event-day">18</span><span class="ip-event-month">Jul 2026</span></div>
+      <div class="ip-event-info"><h4>Mahasiswa dan Dosen Ilmu Politik Sukses Mengikuti Konferensi Jurnal Ilmiah Tingkat Internasional</h4></div>
     </div>
     <div class="ip-event-item">
-      <div class="ip-event-date"><span class="ip-event-day">27</span><span class="ip-event-month">Apr 2025</span></div>
-      <div class="ip-event-info"><h4>Delegasi Ilmu Politik Unesa Berlaga di Debat Mahasiswa Indonesia</h4><p>Kompetisi debat mahasiswa tingkat nasional</p></div>
+      <div class="ip-event-date"><span class="ip-event-day">16</span><span class="ip-event-month">Jul 2026</span></div>
+      <div class="ip-event-info"><h4>Prodi Ilmu Politik Unesa Sukses Menggelar FGD bersama DPRD, KPU, hingga Media Massa</h4></div>
     </div>
   </div>
+</div>
 
-  <div class="ip-info-callout ip-reveal ip-in" style="margin-top:32px;">
+<div class="ip-ta-wrap" style="padding-top:0;">
+  <div class="ip-info-callout ip-reveal ip-in">
     <div class="ip-info-callout-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"/></svg></div>
     <p><strong>Mahasiswa Internasional:</strong> Program studi tengah membangun jalur kemitraan dengan universitas mitra di Asia Tenggara untuk program pertukaran mahasiswa internasional, yang ditargetkan mulai berjalan pada tahun akademik mendatang. Status: penjajakan kemitraan sedang berlangsung melalui Koordinator Kerja Sama &amp; Kemitraan program studi.</p>
   </div>
 </div>
+
+<script>
+(function () {
+  var MONTHS = { 'januari':'Jan','februari':'Feb','maret':'Mar','april':'Apr','mei':'Mei','juni':'Jun',
+    'juli':'Jul','agustus':'Agu','september':'Sep','oktober':'Okt','november':'Nov','desember':'Des' };
+
+  function parseTanggal(text) {
+    var m = text.trim().toLowerCase().match(/^(\d{1,2})\s+([a-z]+)\s+(\d{4})$/);
+    if (!m) return null;
+    var bulan = MONTHS[m[2]] || m[2].slice(0,3);
+    return { day: m[1], label: bulan + ' ' + m[3] };
+  }
+
+  function render(items) {
+    var wrap = document.getElementById('ip-live-events');
+    if (!wrap || !items.length) return;
+    wrap.innerHTML = '';
+    items.slice(0, 3).forEach(function (it) {
+      var row = document.createElement('div');
+      row.className = 'ip-event-item';
+
+      var dateBox = document.createElement('div');
+      dateBox.className = 'ip-event-date';
+      var day = document.createElement('span'); day.className = 'ip-event-day'; day.textContent = it.day;
+      var mon = document.createElement('span'); mon.className = 'ip-event-month'; mon.textContent = it.label;
+      dateBox.appendChild(day); dateBox.appendChild(mon);
+
+      var info = document.createElement('div');
+      info.className = 'ip-event-info';
+      var h4 = document.createElement('h4');
+      var a = document.createElement('a');
+      a.href = it.href; a.target = '_blank'; a.rel = 'noopener';
+      a.style.color = 'inherit'; a.style.textDecoration = 'none';
+      a.textContent = it.title;
+      h4.appendChild(a);
+      info.appendChild(h4);
+
+      row.appendChild(dateBox); row.appendChild(info);
+      wrap.appendChild(row);
+    });
+  }
+
+  fetch('https://ilpol.fisipol.unesa.ac.id/archive')
+    .then(function (r) { return r.text(); })
+    .then(function (html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      var rows = Array.prototype.slice.call(doc.querySelectorAll('.blog-masonry .row'))
+        .filter(function (r) { return r.querySelector('.headline h2 a') && r.querySelector('.news-text strong'); });
+      var items = rows.map(function (r) {
+        var a = r.querySelector('.headline h2 a');
+        var tgl = parseTanggal(r.querySelector('.news-text strong').textContent);
+        if (!tgl) return null;
+        return { title: a.textContent.trim(), href: a.getAttribute('href'), day: tgl.day, label: tgl.label };
+      }).filter(Boolean);
+      if (items.length) render(items);
+    })
+    .catch(function () { /* biarkan fallback statis di atas */ });
+})();
+</script>
