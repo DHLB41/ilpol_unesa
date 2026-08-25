@@ -1031,3 +1031,24 @@ body.ilpol-theme #main-content .ip-event-info p,
 body.ilpol-theme .blog-wrapper .ip-event-info p { color:#8592A0 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
   font-size:12px !important; margin:0 !important; }
 @media(max-width:480px){ .ip-event-item { flex-wrap:wrap; } }
+
+/* ── FASILITAS PAGE ── */
+.ip-facility-wrap { max-width:1100px; margin:0 auto; padding:8px 24px 56px; }
+.ip-facility-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+.ip-facility-card { background:#fff; border:1px solid #DDE3EA; border-radius:16px; overflow:hidden;
+  transition:box-shadow .2s, transform .2s; }
+.ip-facility-card:hover { box-shadow:0 8px 20px -10px rgba(11,42,74,.22); transform:translateY(-3px); }
+.ip-facility-photo { aspect-ratio:16/10; background:#F4F6F9; border-bottom:1px solid #E4E9EF;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
+.ip-facility-photo svg { width:32px; height:32px; stroke:#C6CFDA; fill:none; stroke-width:1.4; }
+body.ilpol-theme #main-content .ip-facility-photo span,
+body.ilpol-theme .blog-wrapper .ip-facility-photo span { color:#B8C0C9 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:11px !important; font-weight:700 !important; text-transform:uppercase !important; letter-spacing:.05em !important; }
+.ip-facility-body { padding:20px 22px; }
+body.ilpol-theme #main-content .ip-facility-body h3,
+body.ilpol-theme .blog-wrapper .ip-facility-body h3 { color:#0B2A4A !important; font-family:'Fraunces',Georgia,serif !important;
+  font-size:16px !important; margin:0 0 8px !important; }
+body.ilpol-theme #main-content .ip-facility-body p,
+body.ilpol-theme .blog-wrapper .ip-facility-body p { color:#5C6773 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:13px !important; line-height:1.7 !important; margin:0 !important; }
+@media(max-width:720px){ .ip-facility-grid { grid-template-columns:1fr; } }
