@@ -1052,3 +1052,13 @@ body.ilpol-theme #main-content .ip-facility-body p,
 body.ilpol-theme .blog-wrapper .ip-facility-body p { color:#5C6773 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
   font-size:13px !important; line-height:1.7 !important; margin:0 !important; }
 @media(max-width:720px){ .ip-facility-grid { grid-template-columns:1fr; } }
+
+/* ── QUOTE CARD (kutipan visi, kontainer — bukan full-bleed) ── */
+.ip-quote-card { background:linear-gradient(135deg,#0B2A4A,#154A82); border-radius:20px; padding:44px 32px; text-align:center; }
+.ip-quote-card .ip-gold-rule { width:56px; height:3px; background:#C8932A; margin:0 auto 22px; border-radius:2px; }
+body.ilpol-theme #main-content .ip-quote-card blockquote,
+body.ilpol-theme .blog-wrapper .ip-quote-card blockquote { color:#fff !important; font-family:'Fraunces',Georgia,serif !important;
+  font-size:19px !important; font-style:italic !important; max-width:700px !important; margin:0 auto 16px !important; line-height:1.6 !important; }
+body.ilpol-theme #main-content .ip-quote-card p,
+body.ilpol-theme .blog-wrapper .ip-quote-card p { color:#F0C868 !important; font-family:'Plus Jakarta Sans',sans-serif !important;
+  font-size:12px !important; font-weight:700 !important; letter-spacing:.05em !important; text-transform:uppercase !important; margin:0 !important; }
