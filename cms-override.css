@@ -421,6 +421,7 @@ body.ilpol-theme .ip-sambutan-text p { color:#EAEEF7 !important; font-size:13px 
   max-width:560px; margin:0 auto; line-height:1.7; }
 
 .ip-focus-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:32px; }
+.ip-focus-grid.ip-focus-grid-2 { grid-template-columns:repeat(2,1fr); }
 .ip-focus-card { background:#fff; border:1px solid #DDE3EA; border-radius:16px; padding:24px;
   transition:box-shadow .2s, transform .2s; }
 .ip-focus-card:hover { box-shadow:0 8px 20px -10px rgba(11,42,74,.22); transform:translateY(-3px); }
