@@ -1,0 +1,189 @@
+<!-- ============================================================
+  KONTEN CMS — Halaman "Berita Prodi"
+  Paste seluruh blok ini ke dalam Body/editor HTML halaman CMS.
+
+  Halaman ini adalah pengganti bergaya situs kita untuk /archive
+  bawaan CMS. /archive TIDAK bisa dimasking (dirender dari rute
+  sistem tanpa Body editor, beda dari halaman "page" biasa) —
+  sudah dicek langsung strukturnya, tidak ada id="main-content"
+  atau titik suntik apa pun di sana.
+
+  Jadi di sini kita bangun ulang fungsinya: script di bawah fetch
+  https://ilpol.fisipol.unesa.ac.id/archive?page=N (same-origin,
+  tidak kena CORS), lalu tombol "Muat Berita Lainnya" memuat
+  halaman arsip berikutnya satu per satu sampai habis — sehingga
+  halaman INI menjadi satu-satunya "daftar semua berita" yang
+  perlu dikunjungi pengguna; tidak ada link keluar ke /archive.
+
+  6 kartu di bawah ini HANYA fallback statis (kalau fetch gagal,
+  mis. JS diblokir) — datanya real, diambil dari arsip live saat
+  halaman ini dibuat. Begitu fetch pertama sukses, kartu-kartu ini
+  otomatis diganti dengan hasil live + tombol Muat Lebih Banyak.
+============================================================ -->
+
+<script src="https://dhlb41.github.io/ilpol_unesa/theme.js" onerror="var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/DHLB41/ilpol_unesa@main/theme.js';document.head.appendChild(s);"></script>
+
+<div class="ip-section">
+  <div class="ip-section-head ip-reveal ip-in">
+    <p class="ip-eyebrow">Program Studi</p>
+    <h2>Berita Prodi</h2>
+    <p>Seluruh berita dan kegiatan Program Studi Ilmu Politik, diperbarui otomatis dari arsip resmi.</p>
+  </div>
+
+  <div class="ip-news-grid ip-reveal ip-in" id="ip-news-grid">
+    <div class="ip-news-card">
+      <div class="ip-news-photo"><img src="https://statik.unesa.ac.id/ilpol/thumbnail/db5a8366-6138-43e1-9d6d-6296517cfa65.jpg" alt="" loading="lazy"></div>
+      <div class="ip-news-body">
+        <p class="ip-news-date">31 Agustus 2026</p>
+        <h3><a href="https://ilpol.fisipol.unesa.ac.id/post/ikuti-pameran-unesa-bisnis-competition-ubc-dan-expo-kwu-2026-mahasiswa-ilmu-politik-pamerkan-plastic-jelly-light-dari-sampah-plastik" target="_blank" rel="noopener">Ikuti Pameran UNESA Bisnis Competition (UBC) dan Expo KWU 2026, Mahasiswa Ilmu Politik Pamerkan Plastic Jelly Light dari Sampah Plastik</a></h3>
+      </div>
+    </div>
+    <div class="ip-news-card">
+      <div class="ip-news-photo"><img src="https://statik.unesa.ac.id/ilpol/thumbnail/0ab4bb33-c7a3-465a-9b77-f6cc7f6720ff.jpg" alt="" loading="lazy"></div>
+      <div class="ip-news-body">
+        <p class="ip-news-date">31 Agustus 2026</p>
+        <h3><a href="https://ilpol.fisipol.unesa.ac.id/post/pakar-politik-unesa-dr-mubarok-muharam-soroti-dinamika-relasi-kuasa-nu-negara-dan-tantangan-ekonomi-jamaah-di-arena-muktamar-ke-35" target="_blank" rel="noopener">Pakar Politik UNESA Dr. Mubarok Muharam Soroti Dinamika Relasi Kuasa NU-Negara dan Tantangan Ekonomi Jamaah di Arena Muktamar ke-35</a></h3>
+      </div>
+    </div>
+    <div class="ip-news-card">
+      <div class="ip-news-photo"><img src="https://statik.unesa.ac.id/ilpol/thumbnail/aa15a4be-4f27-4a64-b65e-0a533e4ebd94.jpg" alt="" loading="lazy"></div>
+      <div class="ip-news-body">
+        <p class="ip-news-date">30 Juli 2026</p>
+        <h3><a href="https://ilpol.fisipol.unesa.ac.id/post/kunjungan-prodi-ilmu-politik-uin-alauddin-makassar-perkuat-sinergi-dan-kerjasama-dengan-ilmu-politik-unesa" target="_blank" rel="noopener">Kunjungan Prodi Ilmu Politik UIN Alauddin Makassar Perkuat Sinergi dan Kerjasama Dengan Ilmu Politik UNESA</a></h3>
+      </div>
+    </div>
+    <div class="ip-news-card">
+      <div class="ip-news-photo"><img src="https://statik.unesa.ac.id/ilpol/thumbnail/83f7097b-03e7-47f2-8fb8-4fe0fa4132f9.jpg" alt="" loading="lazy"></div>
+      <div class="ip-news-body">
+        <p class="ip-news-date">18 Juli 2026</p>
+        <h3><a href="https://ilpol.fisipol.unesa.ac.id/post/mahasiswa-dan-dosen-ilmu-politik-sukses-mengikuti-konferensi-jurnal-ilmiah-tingkat-internasional" target="_blank" rel="noopener">Mahasiswa dan Dosen Ilmu Politik Sukses Mengikuti Konferensi Jurnal Ilmiah Tingkat Internasional</a></h3>
+      </div>
+    </div>
+    <div class="ip-news-card">
+      <div class="ip-news-photo"><img src="https://statik.unesa.ac.id/ilpol/thumbnail/ca77067b-b43f-437b-88ab-3abd9b07ba79.jpg" alt="" loading="lazy"></div>
+      <div class="ip-news-body">
+        <p class="ip-news-date">16 Juli 2026</p>
+        <h3><a href="https://ilpol.fisipol.unesa.ac.id/post/prodi-ilmu-politik-unesa-sukses-menggelar-fgd-bersama-dprd-kpu-hingga-media-massa-untuk-tingkatkan-kompetensi-mahasiswa" target="_blank" rel="noopener">Prodi Ilmu Politik Unesa Sukses Menggelar FGD bersama DPRD, KPU, hingga Media Massa untuk Tingkatkan Kompetensi Mahasiswa</a></h3>
+      </div>
+    </div>
+    <div class="ip-news-card">
+      <div class="ip-news-photo"><img src="https://statik.unesa.ac.id/ilpol/thumbnail/cfd8a998-8764-4bf1-9b15-46e3443a161f.jpg" alt="" loading="lazy"></div>
+      <div class="ip-news-body">
+        <p class="ip-news-date">23 Juni 2026</p>
+        <h3><a href="https://ilpol.fisipol.unesa.ac.id/post/kegiatan-lomba-psn-political-simulation-night-the-political-arena-clash-of-voices-and-interests" target="_blank" rel="noopener">Kegiatan Lomba PSN (Political Simulation Night): The Political Arena — Clash of Voices and Interests</a></h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="ip-news-loadmore">
+    <button type="button" class="ip-btn-gold" id="ip-news-loadmore-btn">Muat Berita Lainnya</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var MONTHS = { 'januari':'Januari','februari':'Februari','maret':'Maret','april':'April','mei':'Mei','juni':'Juni',
+    'juli':'Juli','agustus':'Agustus','september':'September','oktober':'Oktober','november':'November','desember':'Desember' };
+
+  function formatTanggal(text) {
+    var m = text.trim().toLowerCase().match(/^(\d{1,2})\s+([a-z]+)\s+(\d{4})$/);
+    if (!m) return text.trim();
+    var bulan = MONTHS[m[2]] || m[2];
+    return m[1] + ' ' + bulan + ' ' + m[3];
+  }
+
+  function extractItems(html) {
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var rows = Array.prototype.slice.call(doc.querySelectorAll('.blog-masonry .row'))
+      .filter(function (r) { return r.querySelector('.headline h2 a') && r.querySelector('.news-text strong'); });
+    return rows.map(function (r) {
+      var a = r.querySelector('.headline h2 a');
+      var strongEl = r.querySelector('.news-text strong');
+      var img = r.querySelector('.news-text img');
+      return {
+        title: a.textContent.trim(),
+        href: a.getAttribute('href'),
+        tanggal: formatTanggal(strongEl.textContent),
+        img: img ? img.getAttribute('src') : null
+      };
+    });
+  }
+
+  function renderCard(item) {
+    var card = document.createElement('div');
+    card.className = 'ip-news-card';
+
+    if (item.img) {
+      var photo = document.createElement('div');
+      photo.className = 'ip-news-photo';
+      var img = document.createElement('img');
+      img.src = item.img; img.alt = ''; img.loading = 'lazy';
+      img.onerror = function () { photo.remove(); };
+      photo.appendChild(img);
+      card.appendChild(photo);
+    }
+
+    var body = document.createElement('div');
+    body.className = 'ip-news-body';
+
+    var date = document.createElement('p');
+    date.className = 'ip-news-date';
+    date.textContent = item.tanggal;
+    body.appendChild(date);
+
+    var h3 = document.createElement('h3');
+    var a = document.createElement('a');
+    a.href = item.href; a.target = '_blank'; a.rel = 'noopener';
+    a.textContent = item.title;
+    h3.appendChild(a);
+    body.appendChild(h3);
+
+    card.appendChild(body);
+    return card;
+  }
+
+  var grid = document.getElementById('ip-news-grid');
+  var btn = document.getElementById('ip-news-loadmore-btn');
+  if (!grid || !btn) return;
+
+  var page = 0;
+  var loading = false;
+  var firstLoadDone = false;
+  var seenHrefs = {};
+
+  function loadNext() {
+    if (loading) return;
+    loading = true;
+    page += 1;
+    btn.disabled = true;
+    btn.textContent = 'Memuat...';
+
+    fetch('https://ilpol.fisipol.unesa.ac.id/archive?page=' + page)
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        var items = extractItems(html).filter(function (it) {
+          if (seenHrefs[it.href]) return false;
+          seenHrefs[it.href] = true;
+          return true;
+        });
+        if (!items.length) {
+          btn.style.display = 'none';
+          loading = false;
+          return;
+        }
+        if (!firstLoadDone) { grid.innerHTML = ''; firstLoadDone = true; }
+        items.forEach(function (it) { grid.appendChild(renderCard(it)); });
+        btn.disabled = false;
+        btn.textContent = 'Muat Berita Lainnya';
+        loading = false;
+      })
+      .catch(function () {
+        btn.style.display = 'none';
+        loading = false;
+      });
+  }
+
+  loadNext();
+  btn.addEventListener('click', loadNext);
+})();
+</script>
