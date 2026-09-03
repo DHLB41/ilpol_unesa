@@ -8,17 +8,19 @@
   sudah dicek langsung strukturnya, tidak ada id="main-content"
   atau titik suntik apa pun di sana.
 
-  Jadi di sini kita bangun ulang fungsinya: script di bawah fetch
+  Jadi di sini kita bangun ulang fungsinya ala portal berita: satu
+  kartu headline besar (berita terbaru + cuplikan teks) di atas,
+  disusul grid kartu berita lainnya. Script di bawah fetch
   https://ilpol.fisipol.unesa.ac.id/archive?page=N (same-origin,
-  tidak kena CORS), lalu tombol "Muat Berita Lainnya" memuat
-  halaman arsip berikutnya satu per satu sampai habis — sehingga
-  halaman INI menjadi satu-satunya "daftar semua berita" yang
-  perlu dikunjungi pengguna; tidak ada link keluar ke /archive.
+  tidak kena CORS); tombol "Muat Berita Lainnya" memuat halaman
+  arsip berikutnya satu per satu sampai habis — sehingga halaman
+  INI menjadi satu-satunya "daftar semua berita" yang perlu
+  dikunjungi pengguna; tidak ada link keluar ke /archive.
 
-  6 kartu di bawah ini HANYA fallback statis (kalau fetch gagal,
-  mis. JS diblokir) — datanya real, diambil dari arsip live saat
-  halaman ini dibuat. Begitu fetch pertama sukses, kartu-kartu ini
-  otomatis diganti dengan hasil live + tombol Muat Lebih Banyak.
+  Kartu-kartu di bawah ini HANYA fallback statis (kalau fetch
+  gagal, mis. JS diblokir) — datanya real, diambil dari arsip live
+  saat halaman ini dibuat. Begitu fetch pertama sukses, semuanya
+  otomatis diganti dengan hasil live (headline = artikel terbaru).
 ============================================================ -->
 
 <script src="https://dhlb41.github.io/ilpol_unesa/theme.js" onerror="var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/DHLB41/ilpol_unesa@main/theme.js';document.head.appendChild(s);"></script>
@@ -30,14 +32,22 @@
     <p>Seluruh berita dan kegiatan Program Studi Ilmu Politik, diperbarui otomatis dari arsip resmi.</p>
   </div>
 
-  <div class="ip-news-grid ip-reveal ip-in" id="ip-news-grid">
-    <div class="ip-news-card">
-      <div class="ip-news-photo"><img src="https://statik.unesa.ac.id/ilpol/thumbnail/db5a8366-6138-43e1-9d6d-6296517cfa65.jpg" alt="" loading="lazy"></div>
-      <div class="ip-news-body">
-        <p class="ip-news-date">31 Agustus 2026</p>
+  <div class="ip-reveal ip-in" id="ip-news-hero">
+    <div class="ip-news-hero">
+      <div class="ip-news-hero-photo"><img src="https://statik.unesa.ac.id/ilpol/thumbnail/db5a8366-6138-43e1-9d6d-6296517cfa65.jpg" alt="" loading="lazy"></div>
+      <div class="ip-news-hero-body">
+        <span class="ip-news-hero-tag">Berita Terbaru</span>
+        <p class="ip-news-hero-date">31 Agustus 2026</p>
         <h3><a href="https://ilpol.fisipol.unesa.ac.id/post/ikuti-pameran-unesa-bisnis-competition-ubc-dan-expo-kwu-2026-mahasiswa-ilmu-politik-pamerkan-plastic-jelly-light-dari-sampah-plastik" target="_blank" rel="noopener">Ikuti Pameran UNESA Bisnis Competition (UBC) dan Expo KWU 2026, Mahasiswa Ilmu Politik Pamerkan Plastic Jelly Light dari Sampah Plastik</a></h3>
+        <p class="ip-news-hero-excerpt">Ikuti Pameran UNESA Bisnis Competition (UBC) dan Expo Kewirausahaan 2026, Dalam Bidang Industri Kreatif, Mahasiswa Ilmu Politik Pamerkan Plastic Jelly Light&hellip;</p>
+        <a class="ip-news-hero-link" href="https://ilpol.fisipol.unesa.ac.id/post/ikuti-pameran-unesa-bisnis-competition-ubc-dan-expo-kwu-2026-mahasiswa-ilmu-politik-pamerkan-plastic-jelly-light-dari-sampah-plastik" target="_blank" rel="noopener">Baca selengkapnya &rarr;</a>
       </div>
     </div>
+  </div>
+
+  <p class="ip-news-section-label ip-reveal ip-in">Berita Lainnya</p>
+
+  <div class="ip-news-grid ip-reveal ip-in" id="ip-news-grid">
     <div class="ip-news-card">
       <div class="ip-news-photo"><img src="https://statik.unesa.ac.id/ilpol/thumbnail/0ab4bb33-c7a3-465a-9b77-f6cc7f6720ff.jpg" alt="" loading="lazy"></div>
       <div class="ip-news-body">
@@ -100,13 +110,66 @@
       var a = r.querySelector('.headline h2 a');
       var strongEl = r.querySelector('.news-text strong');
       var img = r.querySelector('.news-text img');
+      var excerptEl = r.querySelector('.news-text > p');
       return {
         title: a.textContent.trim(),
         href: a.getAttribute('href'),
         tanggal: formatTanggal(strongEl.textContent),
-        img: img ? img.getAttribute('src') : null
+        img: img ? img.getAttribute('src') : null,
+        excerpt: excerptEl ? excerptEl.textContent.trim() : ''
       };
     });
+  }
+
+  function renderHero(item) {
+    var wrap = document.createElement('div');
+    wrap.className = 'ip-news-hero';
+
+    if (item.img) {
+      var photo = document.createElement('div');
+      photo.className = 'ip-news-hero-photo';
+      var img = document.createElement('img');
+      img.src = item.img; img.alt = ''; img.loading = 'lazy';
+      img.onerror = function () { photo.remove(); };
+      photo.appendChild(img);
+      wrap.appendChild(photo);
+    }
+
+    var body = document.createElement('div');
+    body.className = 'ip-news-hero-body';
+
+    var tag = document.createElement('span');
+    tag.className = 'ip-news-hero-tag';
+    tag.textContent = 'Berita Terbaru';
+    body.appendChild(tag);
+
+    var date = document.createElement('p');
+    date.className = 'ip-news-hero-date';
+    date.textContent = item.tanggal;
+    body.appendChild(date);
+
+    var h3 = document.createElement('h3');
+    var a = document.createElement('a');
+    a.href = item.href; a.target = '_blank'; a.rel = 'noopener';
+    a.textContent = item.title;
+    h3.appendChild(a);
+    body.appendChild(h3);
+
+    if (item.excerpt) {
+      var excerpt = document.createElement('p');
+      excerpt.className = 'ip-news-hero-excerpt';
+      excerpt.textContent = item.excerpt;
+      body.appendChild(excerpt);
+    }
+
+    var link = document.createElement('a');
+    link.className = 'ip-news-hero-link';
+    link.href = item.href; link.target = '_blank'; link.rel = 'noopener';
+    link.textContent = 'Baca selengkapnya →';
+    body.appendChild(link);
+
+    wrap.appendChild(body);
+    return wrap;
   }
 
   function renderCard(item) {
@@ -142,13 +205,15 @@
     return card;
   }
 
+  var heroWrap = document.getElementById('ip-news-hero');
   var grid = document.getElementById('ip-news-grid');
   var btn = document.getElementById('ip-news-loadmore-btn');
-  if (!grid || !btn) return;
+  if (!heroWrap || !grid || !btn) return;
 
   var page = 0;
   var loading = false;
   var firstLoadDone = false;
+  var heroRendered = false;
   var seenHrefs = {};
 
   function loadNext() {
@@ -171,8 +236,15 @@
           loading = false;
           return;
         }
-        if (!firstLoadDone) { grid.innerHTML = ''; firstLoadDone = true; }
-        items.forEach(function (it) { grid.appendChild(renderCard(it)); });
+        if (!firstLoadDone) { heroWrap.innerHTML = ''; grid.innerHTML = ''; firstLoadDone = true; }
+        items.forEach(function (it) {
+          if (!heroRendered) {
+            heroWrap.appendChild(renderHero(it));
+            heroRendered = true;
+          } else {
+            grid.appendChild(renderCard(it));
+          }
+        });
         btn.disabled = false;
         btn.textContent = 'Muat Berita Lainnya';
         loading = false;
