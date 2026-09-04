@@ -207,8 +207,13 @@
 
   function generateHtml() {
     var clone = editor.cloneNode(true);
+    // sanitize first: unwrapping disallowed tags (span/font/etc.) can expose new
+    // stray text nodes directly under the root, so the wrap pass must run AFTER,
+    // not before -- and run it twice since removing/replacing DIVs can expose more.
+    sanitize(clone);
     wrapStrayTextNodes(clone);
     sanitize(clone);
+    wrapStrayTextNodes(clone);
     var body = clone.innerHTML.trim().replace(/&nbsp;/g, ' ');
     var script = '<script src="https://dhlb41.github.io/ilpol_unesa/theme.js" onerror="var s=document.createElement(\'script\');s.src=\'https://cdn.jsdelivr.net/gh/DHLB41/ilpol_unesa@main/theme.js\';document.head.appendChild(s);"><' + '/script>';
     return script + '\n\n<div class="ip-article-prose">\n' + body + '\n</div>';
