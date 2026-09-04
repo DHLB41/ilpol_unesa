@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Generator Berita — Ilmu Politik UNESA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://dhlb41.github.io/ilpol_unesa/cms-override.css">
+<style>
+  :root { --navy:#0B2A4A; --navy2:#154A82; --gold:#C8932A; --border:#DDE3EA; --muted:#5C6773; --bg:#F4F6F9; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); font-family:'Plus Jakarta Sans',sans-serif; color:#1F2937; }
+  .gen-header { background:linear-gradient(135deg,var(--navy),var(--navy2)); color:#fff; padding:28px 24px; }
+  .gen-header-inner { max-width:1180px; margin:0 auto; }
+  .gen-header h1 { font-family:'Fraunces',Georgia,serif; font-size:22px; margin:0 0 6px; }
+  .gen-header p { margin:0; font-size:13px; color:#CBD9E8; max-width:720px; line-height:1.6; }
+  .gen-wrap { max-width:1180px; margin:0 auto; padding:24px; display:grid; grid-template-columns:1.2fr 1fr; gap:22px; align-items:start; }
+  .gen-panel { background:#fff; border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+  .gen-panel-head { padding:16px 20px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+  .gen-panel-head h2 { font-family:'Fraunces',Georgia,serif; color:var(--navy); font-size:15px; margin:0; }
+  .toolbar { display:flex; flex-wrap:wrap; gap:6px; padding:12px 20px; border-bottom:1px solid var(--border); background:#FAFBFC; }
+  .toolbar button { border:1px solid var(--border); background:#fff; color:var(--navy); font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:12.5px; font-weight:700; padding:7px 11px; border-radius:8px; cursor:pointer; transition:background .15s, border-color .15s; }
+  .toolbar button:hover { background:#EAF1F8; border-color:var(--navy2); }
+  .toolbar button.active { background:var(--navy); color:#fff; border-color:var(--navy); }
+  .toolbar .sep { width:1px; background:var(--border); margin:2px 4px; }
+  #editor { min-height:420px; padding:24px 28px; outline:none; }
+  #editor:empty::before { content:attr(data-placeholder); color:#B0B8C1; }
+  #editor p, #editor li { font-family:'Plus Jakarta Sans',sans-serif; font-size:15px; line-height:1.85; color:#3A4552; margin:0 0 18px; }
+  #editor h2 { font-family:'Fraunces',Georgia,serif; color:var(--navy); font-size:22px; margin:36px 0 14px; }
+  #editor h3 { font-family:'Fraunces',Georgia,serif; color:var(--navy); font-size:18px; margin:28px 0 12px; }
+  #editor img { max-width:100%; border-radius:14px; margin:26px 0; display:block; }
+  #editor blockquote { border-left:3px solid var(--gold); margin:26px 0; padding:4px 0 4px 20px; color:var(--muted); font-family:'Fraunces',Georgia,serif; font-style:italic; font-size:16px; }
+  #editor a { color:var(--navy); font-weight:700; }
+  #editor figcaption { color:#8592A0; font-size:12.5px; text-align:center; }
+  .gen-output-wrap { padding:16px 20px; }
+  #output { width:100%; min-height:420px; resize:vertical; border:1px solid var(--border); border-radius:10px; padding:14px;
+    font-family:'SF Mono','Menlo',monospace; font-size:12px; line-height:1.6; color:#2A2F36; background:#FAFBFC; }
+  .copy-btn { display:inline-flex; align-items:center; gap:8px; background:var(--navy); color:#fff; font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:13px; font-weight:700; padding:9px 18px; border-radius:999px; border:none; cursor:pointer; transition:background .15s; }
+  .copy-btn:hover { background:var(--navy2); }
+  .copy-btn.copied { background:#1F8A54; }
+  .gen-hint { max-width:1180px; margin:0 auto 24px; padding:0 24px; }
+  .gen-hint ol { color:var(--muted); font-size:13px; line-height:1.8; padding-left:20px; }
+  .gen-hint strong { color:var(--navy); }
+  @media(max-width:900px){ .gen-wrap { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<div class="gen-header">
+  <div class="gen-header-inner">
+    <h1>Generator Berita — Ilmu Politik UNESA</h1>
+    <p>Tulis artikel seperti biasa di kotak kiri (bisa tempel dari Word/Google Docs). HTML siap-tempel akan otomatis muncul di kotak kanan — tinggal salin dan tempel ke Body/editor HTML saat membuat postingan berita di CMS.</p>
+  </div>
+</div>
+
+<div class="gen-hint">
+  <ol>
+    <li>Tulis judul artikel <strong>langsung di kolom Judul CMS</strong> saat membuat postingan (bukan di sini) — kotak di bawah ini hanya untuk isi/bodi artikel.</li>
+    <li>Untuk gambar: unggah dulu ke pengelola media CMS seperti biasa, salin URL gambarnya, lalu klik tombol <strong>Gambar</strong> di toolbar dan tempel URL-nya.</li>
+    <li>Setelah selesai menulis, klik <strong>Salin HTML</strong>, lalu tempel ke Body editor CMS memakai mode <strong>Source Code/HTML</strong> (bukan mode visual biasa).</li>
+  </ol>
+</div>
+
+<div class="gen-wrap">
+  <div class="gen-panel">
+    <div class="gen-panel-head"><h2>Tulis Artikel</h2></div>
+    <div class="toolbar">
+      <button type="button" data-cmd="bold" title="Tebal"><b>B</b></button>
+      <button type="button" data-cmd="italic" title="Miring"><i>I</i></button>
+      <div class="sep"></div>
+      <button type="button" data-cmd="formatBlock" data-value="P" title="Paragraf">P</button>
+      <button type="button" data-cmd="formatBlock" data-value="H2" title="Subjudul besar">H2</button>
+      <button type="button" data-cmd="formatBlock" data-value="H3" title="Subjudul kecil">H3</button>
+      <div class="sep"></div>
+      <button type="button" data-cmd="insertUnorderedList" title="Daftar bullet">&bull; List</button>
+      <button type="button" data-cmd="insertOrderedList" title="Daftar bernomor">1. List</button>
+      <button type="button" data-cmd="formatBlock" data-value="BLOCKQUOTE" title="Kutipan">&ldquo; Kutipan</button>
+      <div class="sep"></div>
+      <button type="button" id="btnLink" title="Sisipkan tautan">Tautan</button>
+      <button type="button" id="btnImage" title="Sisipkan gambar">Gambar</button>
+      <div class="sep"></div>
+      <button type="button" data-cmd="removeFormat" title="Bersihkan format">Bersihkan</button>
+    </div>
+    <div id="editor" class="ip-article-prose" contenteditable="true" data-placeholder="Mulai menulis di sini, atau tempel (paste) naskah dari Word/Google Docs&hellip;"></div>
+  </div>
+
+  <div class="gen-panel">
+    <div class="gen-panel-head">
+      <h2>HTML Siap-Tempel</h2>
+      <button class="copy-btn" id="copyBtn">Salin HTML</button>
+    </div>
+    <div class="gen-output-wrap">
+      <textarea id="output" readonly spellcheck="false"></textarea>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var editor = document.getElementById('editor');
+  var output = document.getElementById('output');
+  var copyBtn = document.getElementById('copyBtn');
+
+  try { document.execCommand('defaultParagraphSeparator', false, 'p'); } catch (e) {}
+
+  function exec(cmd, value) {
+    editor.focus();
+    document.execCommand(cmd, false, value || null);
+    updateOutput();
+  }
+
+  document.querySelectorAll('.toolbar button[data-cmd]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      exec(btn.getAttribute('data-cmd'), btn.getAttribute('data-value'));
+    });
+  });
+
+  document.getElementById('btnLink').addEventListener('click', function () {
+    var url = window.prompt('Alamat URL tautan:', 'https://');
+    if (url) exec('createLink', url);
+  });
+
+  document.getElementById('btnImage').addEventListener('click', function () {
+    var url = window.prompt('URL gambar (dari pengelola media CMS):', 'https://');
+    if (!url) return;
+    var caption = window.prompt('Keterangan gambar (boleh dikosongkan):', '') || '';
+    var html = caption
+      ? '<figure><img src="' + url.replace(/"/g, '&quot;') + '"><figcaption>' + caption.replace(/</g, '&lt;') + '</figcaption></figure>'
+      : '<img src="' + url.replace(/"/g, '&quot;') + '">';
+    exec('insertHTML', html);
+  });
+
+  var ALLOWED_TAGS = { P:1, H2:1, H3:1, B:1, STRONG:1, I:1, EM:1, A:1, UL:1, OL:1, LI:1, BLOCKQUOTE:1, IMG:1, FIGURE:1, FIGCAPTION:1, BR:1 };
+
+  function sanitize(node) {
+    Array.prototype.slice.call(node.childNodes).forEach(function (child) {
+      if (child.nodeType === 3) return; // text node, keep as-is
+      if (child.nodeType !== 1) { node.removeChild(child); return; }
+
+      sanitize(child);
+
+      var tag = child.tagName;
+      if (tag === 'DIV') {
+        // if it already contains block-level content (list, heading, quote, another
+        // paragraph...), just unwrap it instead of forcing it into an invalid <p><ul>...
+        if (child.querySelector('p,h2,h3,ul,ol,blockquote,figure,div')) {
+          while (child.firstChild) node.insertBefore(child.firstChild, child);
+          node.removeChild(child);
+          return;
+        }
+        // otherwise it's a plain contenteditable line-break artifact -> treat as paragraph
+        var p = document.createElement('P');
+        while (child.firstChild) p.appendChild(child.firstChild);
+        node.replaceChild(p, child);
+        child = p; tag = 'P';
+      }
+      if (tag === 'SPAN' || tag === 'FONT') {
+        while (child.firstChild) node.insertBefore(child.firstChild, child);
+        node.removeChild(child);
+        return;
+      }
+      // browsers sometimes leave a <ul>/<ol>/heading/etc. directly inside a <p> when
+      // toggling formatBlock right before a list command -> that's invalid HTML nesting,
+      // so unwrap the <p> instead of keeping it
+      if (tag === 'P' && child.querySelector('p,h2,h3,ul,ol,blockquote,figure')) {
+        while (child.firstChild) node.insertBefore(child.firstChild, child);
+        node.removeChild(child);
+        return;
+      }
+      if (!ALLOWED_TAGS[tag]) {
+        while (child.firstChild) node.insertBefore(child.firstChild, child);
+        node.removeChild(child);
+        return;
+      }
+      // strip all attributes except href on <a> and src on <img>
+      var keep = {};
+      if (tag === 'A' && child.getAttribute('href')) keep.href = child.getAttribute('href');
+      if (tag === 'IMG' && child.getAttribute('src')) keep.src = child.getAttribute('src');
+      Array.prototype.slice.call(child.attributes).forEach(function (attr) { child.removeAttribute(attr.name); });
+      Object.keys(keep).forEach(function (k) { child.setAttribute(k, keep[k]); });
+      if (tag === 'A') { child.setAttribute('target', '_blank'); child.setAttribute('rel', 'noopener'); }
+
+      if ((tag === 'P' || tag === 'H2' || tag === 'H3') && !child.textContent.trim() && !child.querySelector('img')) {
+        node.removeChild(child);
+      }
+    });
+  }
+
+  function wrapStrayTextNodes(root) {
+    Array.prototype.slice.call(root.childNodes).forEach(function (child) {
+      if (child.nodeType === 3 && child.textContent.trim()) {
+        var p = document.createElement('P');
+        root.insertBefore(p, child);
+        p.appendChild(child);
+      } else if (child.nodeType === 3) {
+        root.removeChild(child);
+      } else if (child.nodeType === 1 && child.tagName === 'BR') {
+        root.removeChild(child);
+      }
+    });
+  }
+
+  function generateHtml() {
+    var clone = editor.cloneNode(true);
+    wrapStrayTextNodes(clone);
+    sanitize(clone);
+    var body = clone.innerHTML.trim().replace(/&nbsp;/g, ' ');
+    var script = '<script src="https://dhlb41.github.io/ilpol_unesa/theme.js" onerror="var s=document.createElement(\'script\');s.src=\'https://cdn.jsdelivr.net/gh/DHLB41/ilpol_unesa@main/theme.js\';document.head.appendChild(s);"><' + '/script>';
+    return script + '\n\n<div class="ip-article-prose">\n' + body + '\n</div>';
+  }
+
+  function updateOutput() {
+    output.value = generateHtml();
+  }
+
+  editor.addEventListener('input', updateOutput);
+  editor.addEventListener('paste', function () { setTimeout(updateOutput, 0); });
+
+  copyBtn.addEventListener('click', function () {
+    output.select();
+    navigator.clipboard && navigator.clipboard.writeText(output.value).then(function () {
+      copyBtn.textContent = 'Tersalin ✓';
+      copyBtn.classList.add('copied');
+      setTimeout(function () { copyBtn.textContent = 'Salin HTML'; copyBtn.classList.remove('copied'); }, 1800);
+    }).catch(function () {
+      document.execCommand('copy');
+    });
+  });
+
+  updateOutput();
+})();
+</script>
+</body>
+</html>
