@@ -499,9 +499,10 @@ body.ilpol-theme .blog-wrapper .title h2 .btn-box:hover { border-color:#C8932A !
 body.ilpol-theme .blog-wrapper .title h2 .btn-box .fa { color:#C8932A !important; }
 
 body.ilpol-theme .blog-masonry { display:flex !important; flex-wrap:wrap !important; gap:20px !important; margin:0 !important; }
-body.ilpol-theme .blog-masonry > div[class*="col-lg"] {
+body.ilpol-theme .blog-masonry > div[class*="col-lg"]:not(.col-lg-12) {
   float:none !important; width:calc(50% - 10px) !important; padding:0 !important;
 }
+body.ilpol-theme .blog-masonry > div.col-lg-12 { float:none !important; width:100% !important; padding:0 !important; }
 body.ilpol-theme .blog-carousel {
   background:#fff !important; border:1px solid #DDE3EA !important; border-radius:16px !important;
   overflow:hidden !important; height:100% !important; transition:box-shadow .2s, transform .2s !important;
@@ -524,12 +525,18 @@ body.ilpol-theme .blog-carousel-header h3 {
 }
 body.ilpol-theme .blog-carousel-header h3 a { color:#0B2A4A !important; background-color:transparent !important; }
 body.ilpol-theme .blog-carousel-header h3 a:hover { color:#C8932A !important; background-color:transparent !important; }
+/* single-post page: native duplicate <h1> title (homepage widget never has one, only <h3>) */
+body.ilpol-theme .blog-carousel-header h1 {
+  color:#0B2A4A !important; font-family:'Fraunces',Georgia,serif !important; font-weight:600 !important;
+  text-transform:none !important; font-size:26px !important; line-height:1.3 !important; margin:0 0 10px !important; padding:0 !important;
+}
 body.ilpol-theme .blog-carousel-meta { display:flex !important; gap:14px !important; margin:0 0 4px !important; }
 body.ilpol-theme .blog-carousel-meta span { font-size:11px !important; color:#5C6773 !important; display:inline-flex !important; align-items:center !important; gap:5px !important; }
 body.ilpol-theme .blog-carousel-meta .fa-eye { display:none !important; }
 body.ilpol-theme .blog-carousel-meta span:has(.fa-eye) { display:none !important; }
 body.ilpol-theme .blog-carousel-desc { padding:0 18px 16px !important; }
 body.ilpol-theme .blog-carousel-desc p:empty { display:none !important; }
+@media(max-width:640px){ body.ilpol-theme .blog-carousel-header h1 { font-size:20px !important; } }
 @media(max-width:900px){
   body.ilpol-theme .blog-masonry > div[class*="col-lg"] { width:100% !important; }
 }
