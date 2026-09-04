@@ -553,6 +553,29 @@ body.ilpol-theme #sidebar .widget > h3 {
   text-transform:uppercase !important; color:#C8932A !important; margin:0 !important;
   font-family:'Plus Jakarta Sans',sans-serif !important;
 }
+/* single-post sidebar (Kategori / Artikel Terkini): several h2+ul pairs share ONE
+   .title wrapper instead of one each -- the homepage-only "Kabar Terbaru" eyebrow
+   label (added generically to any .blog-wrapper .title h2::before) leaks in here
+   and repeats per h2, and the CMS also emits one malformed empty <h2></h2>. */
+body.ilpol-theme .blog-wrapper .widget .title h2::before { content:none !important; }
+#sidebar .widget .title h2:empty { display:none !important; }
+body.ilpol-theme #sidebar .widget .title h2:not(:first-child) {
+  margin-top:18px !important; padding-top:16px !important; border-top:1px solid #DDE3EA !important;
+}
+body.ilpol-theme #sidebar .widget .title ul.nav-stacked {
+  margin:12px 0 0 !important; padding:0 !important; list-style:none !important;
+}
+body.ilpol-theme #sidebar .widget .title ul.nav-stacked li {
+  border:none !important; background:transparent !important; padding:0 !important;
+  margin:0 !important; border-bottom:1px solid #EEF1F4 !important;
+}
+body.ilpol-theme #sidebar .widget .title ul.nav-stacked li:last-child { border-bottom:none !important; }
+body.ilpol-theme #sidebar .widget .title ul.nav-stacked li a {
+  display:block !important; padding:9px 0 !important; color:#0B2A4A !important; background:transparent !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important; font-size:13px !important; line-height:1.5 !important;
+  border:none !important; border-radius:0 !important;
+}
+body.ilpol-theme #sidebar .widget .title ul.nav-stacked li a:hover { color:#C8932A !important; background:transparent !important; }
 body.ilpol-theme #sidebar .widget .btn-primary { width:100% !important; text-align:center !important; }
 body.ilpol-theme #sidebar .accordion-toggle {
   display:flex !important; align-items:center !important; gap:10px !important;
